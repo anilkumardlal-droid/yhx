@@ -10,14 +10,29 @@
 body{
 font-family: Arial, sans-serif;
 display:flex;
-align-items:flex-start;   /* 👈 center से top */
+align-items:flex-start;
 justify-content:center;
 height:100vh;
 margin:0;
 background:#fff;
 color:#111;
 font-size:18px;
-padding-top:120px;        /* 👈 top spacing */
+padding-top:120px;
+}
+
+/* 🔥 TIMER STYLE */
+#count{
+color:#1a73e8;          /* blue color */
+font-weight:700;        /* bold */
+font-size:22px;
+animation:pulse 1s infinite;
+}
+
+/* 🔥 smooth animation */
+@keyframes pulse{
+0%{opacity:1; transform:scale(1);}
+50%{opacity:0.5; transform:scale(1.1);}
+100%{opacity:1; transform:scale(1);}
 }
 </style>
 </head>
