@@ -167,11 +167,24 @@ transition:0.3s;
   grid-column: auto;
 }
 
-.left p{margin:auto;}
+.left p{margin:10px;}
 .left h1{font-size:30px;}
 }
 .contact-btn{
     margin-top: 20px;
+}
+.features{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  align-items:center;
+  font-size:14px;
+}
+
+.features span{
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 </style>
 </head>
@@ -247,8 +260,27 @@ transition:0.3s;
 
 <p>Go7.in is a short, powerful and highly brandable domain. Perfect for startups, SaaS or tech ventures. Easy to remember and built for strong branding. Serious buyers only.</p>
 
-<p>
-Direct Owner • Fast Transfer • Secure Deal
+<p class="features">
+  <span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" fill="currentColor"/>
+    </svg>
+    Direct Owner
+  </span>
+
+  <span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/>
+    </svg>
+    Fast Transfer
+  </span>
+
+  <span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M12 2l8 4v6c0 5.3-3.4 10.4-8 12-4.6-1.6-8-6.7-8-12V6l8-4z" fill="currentColor"/>
+    </svg>
+    Secure Deal
+  </span>
 </p>
 
 <a href="mailto:anil@go7.in" class="contact-btn">Buy This Domain</a>
