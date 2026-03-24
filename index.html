@@ -140,25 +140,35 @@ transition:0.3s;
 .orange{color:#ff6d00;}
 
 @media(max-width:768px){
-.hero{flex-direction:column;text-align:center;}
-.right{
-position:static;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:16px;
-height:auto;
-margin-top:40px;
-}
-.block{position:static;width:60px;height:60px;font-size:32px;}
-.left p{margin:auto;}
-.left h1{font-size:30px;}
+.hero{
+  flex-direction:column;
+  text-align:center;
 }
 
-.nav a{
-text-decoration:none;
-color:#0d0d0d;
-font-weight:400;
+.right{
+  position:static;
+  display:grid;
+  grid-template-columns: repeat(4, 60px); /* 👈 4 letters = SALE */
+  justify-content:center;
+  gap:16px;
+  height:auto;
+  margin-top:40px;
+}
+
+.block{
+  position:static;
+  width:60px;
+  height:60px;
+  font-size:32px;
+}
+
+/* 👇 GO7 ko next line me le jane ke liye */
+.block:nth-child(n+5){
+  grid-column: auto;
+}
+
+.left p{margin:auto;}
+.left h1{font-size:30px;}
 }
 .contact-btn{
     margin-top: 20px;
