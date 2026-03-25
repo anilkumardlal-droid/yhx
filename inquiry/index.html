@@ -10,6 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
@@ -210,7 +212,7 @@ to {opacity: 1; transform: translateX(0);}
 
 <div class="field">
 <label>Telephone Number *</label>
-<input id="phone" required>
+<input id="phone" type="tel" required>
 </div>
 
 <div class="field">
@@ -284,17 +286,19 @@ if(!/^\+\d{1,4}$/.test(codeValue)){
   return;
 }
 
-  const repValue = document.querySelector('input[name="rep"]:checked')?.value || "";
-
+  if(!iti.isValidNumber()){
+  alert("Enter valid phone number");
+  return;
+}
+  
   const params = {
     fname: document.getElementById("fname").value.trim(),
     lname: document.getElementById("lname").value.trim(),
     email: document.getElementById("email").value.trim(),
     code: document.getElementById("code").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
+    phone: iti.getNumber(),
     offer: document.getElementById("offer").value.trim(),
     currency: document.getElementById("currency").value,
-    rep: repValue,
     message: document.getElementById("message").value.trim(),
     domain: "Go7.in"
   };
@@ -329,5 +333,22 @@ if(!/^\+\d{1,4}$/.test(codeValue)){
 }
 </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+<script>
+const phoneInput = document.querySelector("#phone");
+
+const iti = window.intlTelInput(phoneInput, {
+  initialCountry: "auto",
+  geoIpLookup: function(callback) {
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => callback(data.country_code))
+      .catch(() => callback("IN"));
+  },
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+});
+</script>
+  
 </body>
 </html>
