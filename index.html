@@ -211,6 +211,23 @@ transition:0.3s;
 .nav a:hover{
   color:#1a73e8;        /* hover blue */
 }
+
+  .btn-group{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.secondary-btn{
+  background:linear-gradient(135deg,#111,#444);
+}
+
+@media(max-width:768px){
+  .btn-group{
+    justify-content:center;
+  }
+}
 </style>
 </head>
 
@@ -308,7 +325,10 @@ transition:0.3s;
   </span>
 </p>
 
-<a href="mailto:anil@go7.in" class="contact-btn">Buy This Domain</a>
+<div class="btn-group">
+  <a href="mailto:anil@go7.in" class="contact-btn">Buy This Domain</a>
+  <a href="/inquiry" class="contact-btn secondary-btn">Inquiry</a>
+</div>
 
 <div class="signature">Anil Srivastav</div>
 <div class="name">Domain Owner</div>
