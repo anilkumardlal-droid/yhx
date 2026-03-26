@@ -157,6 +157,41 @@ to{opacity:1;transform:translateX(0);}
 .grid{grid-template-columns:1fr;}
 .full{grid-column:span 1;}
 }
+
+  .layout{
+display:grid;
+grid-template-columns: 1fr 1.2fr;
+gap:30px;
+align-items:start;
+}
+
+.sidebar{
+padding:10px 10px 10px 0;
+}
+
+.sidebar h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.sidebar p{
+font-size:14px;
+color:#444;
+line-height:1.7;
+}
+
+.form-box{
+background:#fff;
+}
+
+@media(max-width:768px){
+.layout{
+grid-template-columns:1fr;
+}
+.sidebar{
+padding:0;
+}
+}
 </style>
 </head>
 
@@ -191,6 +226,27 @@ GO7
 
 <!-- FORM -->
 <div class="container">
+
+<div class="layout">
+
+<!-- LEFT SIDEBAR TEXT -->
+<div class="sidebar">
+<h3>Premium Domain Opportunity</h3>
+<p>
+Go7.in is a short, memorable, and brandable domain perfect for modern digital ventures. 
+Its compact structure makes it highly valuable for startups, tech platforms, fintech services, 
+or innovative online brands looking to establish a strong identity in India and globally. 
+Short domains like this are rare and highly sought after because they are easy to remember, 
+type, and market. Whether you are building a new product, launching a startup, or expanding 
+your digital presence, Go7.in provides a powerful branding advantage. This domain is directly 
+owned and available for fast, secure transfer. Serious buyers looking for a premium digital 
+asset are encouraged to make an offer or inquiry today.
+</p>
+</div>
+
+<!-- RIGHT FORM -->
+<div class="form-box">
+
 <h2>Make an offer or inquiry for this domain</h2>
 
 <form id="form" onsubmit="sendMail(event)">
@@ -247,6 +303,9 @@ GO7
 
 <button type="submit" id="submitBtn">Send Inquiry</button>
 </form>
+
+</div>
+</div>
 
 <div class="success" id="successBox">
 <h2>Thank you! 🎉</h2>
