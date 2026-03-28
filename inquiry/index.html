@@ -133,6 +133,52 @@ font-size:13px;
 .grid{grid-template-columns:1fr;}
 }
 
+/* 🔥 RESPONSIVE FIX */
+@media(max-width:768px){
+
+.header{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.logo svg{
+  height:50px;
+}
+
+.nav{
+  width:100%;
+  display:flex;
+  justify-content:flex-start;
+  gap:15px;
+}
+
+.container{
+  margin:20px;
+  padding:20px;
+}
+
+.grid{
+  grid-template-columns:1fr; /* 👈 2 column → 1 column */
+}
+
+.inline{
+  flex-wrap:wrap;
+}
+
+button{
+  width:100%;
+}
+
+.top-info{
+  padding:15px;
+}
+
+}
+
+input,select,textarea{
+font-size:16px; /* mobile zoom issue fix */
+}
 </style>
 </head>
 
@@ -160,7 +206,7 @@ font-size:13px;
 
 <div class="container">
 
-<div class="top-info">
+<div class="top-info" id="premiumBox">
 <h3>Premium Domain Opportunity</h3>
 <p>
 Go7.in is a short, memorable, and brandable domain ideal for startups and digital businesses. Easy to recall and market, it offers strong branding potential. Direct owner sale with fast, secure transfer for serious buyers.
@@ -304,6 +350,8 @@ company:companyName.value||""
 emailjs.send("service_y231ani","template_fin8z5k",params)
 .then(()=>{
 form.style.display="none";
+premiumBox.style.display="none";
+footerBox.style.display="none";
 
 const box=document.createElement("div");
 box.innerHTML=`
@@ -336,7 +384,7 @@ window.location.href="/";
 window.intlTelInput(document.querySelector("#phone"),{initialCountry:"IN"});
 </script>
 
-  <footer style="text-align:center;margin:40px 0;color:#666;font-size:13px;">
+  <footer id="footerBox" style="text-align:center;margin:40px 0;color:#666;font-size:13px;">
 © 2026 Go7.in - All Rights Reserved.
 </footer>
 </body>
