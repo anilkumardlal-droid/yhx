@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- ✅ ONLY ONE FAVICON (FIXED) -->
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<g transform="translate(15,20) rotate(-12)">
-<polygon points="0,30 12,18 12,42" fill="%237c3bed"/>
-<polygon points="20,18 38,0 38,60 20,42" fill="%237c3bed"/>
-<polygon points="46,18 64,0 64,60 46,42" fill="%237c3bed"/>
-</g>
-</svg>'>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,6 +18,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{background:#ffffff;color:#202122;}
 
+/* HEADER */
 .header{
 max-width:1200px;
 margin:auto;
@@ -36,6 +26,11 @@ padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+}
+
+.logo svg{
+height:60px;
+display:block;
 }
 
 .nav a{
@@ -47,6 +42,7 @@ font-weight:500;
 }
 .nav a:hover{color:#1a73e8;}
 
+/* FORM */
 .container{
 max-width:1080px;
 margin:40px auto;
@@ -55,12 +51,12 @@ background:#fff;
 border-radius:12px;
 }
 
-.top-info{
-border-left:6px solid #7c3bed;
-border-radius:8px;
-padding:20px;
-margin-bottom:25px;
-background: #faf7ff;
+h2{
+text-align:center;
+margin-bottom:30px;
+background: linear-gradient(90deg, #1dbafa, #f9b606);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .grid{
@@ -71,222 +67,118 @@ gap:16px;
 
 .field{display:flex;flex-direction:column;}
 label{font-size:13px;margin-bottom:6px;}
+
 label span{color:#ff4d4f;}
 
 input,select,textarea{
-width:100%;
 padding:12px;
 border:1px solid #d8dae0;
 border-radius:8px;
 background:#faf7ff;
 }
 
-input,
-select,
-textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #d8dae0;
-  border-radius:8px;
-  background:#F9F9F9;
-  transition:0.2s;
-}
-
-/* 👇 IMPORTANT PART */
-input:focus,
-select:focus,
-textarea:focus{
-  outline:none;
-  border:1px solid #7c3bed;
-}
-
-/* 👇 extra safety (mobile + browser fix) */
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible{
-  outline:none;
-  border:1px solid #7c3bed;
-}
-
 textarea{height:120px;}
 .full{grid-column:span 2;}
 
 button{
-margin-top:20px;
-padding:14px 30px;
-border:none;
-border-radius:30px;
-background: linear-gradient(135deg, #4f46e5, #6d28d9);
-color:#fff;
-cursor:pointer;
+  margin-top:20px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+ background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color:#fff;
+  font-weight:500;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
 }
 
-.inline{
-display:flex;
-align-items:center;
-gap:10px;
-margin-top:6px;
-font-size:13px;
+button:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
 }
+
+button:active{
+  transform:scale(0.96);
+}
+
+button::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  transition:0.5s;
+}
+
+button:hover::after{
+  left:100%;
+}
+
+.note{font-size:12px;color:#888;margin-top:4px;}
+
+.success{display:none;text-align:center;padding:40px;}
+.timer{font-size:22px;color:#ff4d4f;margin-top:10px;}
+
+/* SVG Animation */
+.icon-part {
+opacity: 0;
+transform: translateY(10px);
+animation: iconIn 0.6s ease forwards;
+}
+.icon-part:nth-child(1){animation-delay:0.1s;}
+.icon-part:nth-child(2){animation-delay:0.2s;}
+.icon-part:nth-child(3){animation-delay:0.3s;}
+.icon-part:nth-child(4){animation-delay:0.4s;}
+
+.logo-text{
+opacity:0;
+transform:translateX(20px);
+animation:textIn 0.8s ease forwards;
+animation-delay:0.5s;
+}
+
+@keyframes iconIn{
+to{opacity:1;transform:translateY(0);}
+}
+@keyframes textIn{
+to{opacity:1;transform:translateX(0);}
+}
+
+/* phone fix */
+.iti{width:100%;}
+.iti input{width:100%!important;padding-left:50px!important;}
 
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
+.full{grid-column:span 1;}
 }
 
-/* 🔥 RESPONSIVE FIX */
-@media(max-width:768px){
-
-.header{
-  flex-direction:column;
-  align-items:flex-start;
-  gap:10px;
+.form-box{
+background:#fff;
 }
 
-.logo svg{
-  height:50px;
+  .top-info{
+border-left:6px solid #7c3bed;
+border-radius:8px;
+padding:20px;
+margin-bottom:25px;
+background: #faf7ff;
 }
 
-.nav{
-  width:100%;
-  display:flex;
-  justify-content:flex-start;
-  gap:15px;
+.top-info h3{
+margin-bottom:8px;
+color:#202122;
 }
 
-.container{
-  margin:20px;
-  padding:20px;
-}
-
-.grid{
-  grid-template-columns:1fr; /* 👈 2 column → 1 column */
-}
-
-.inline{
-  flex-wrap:wrap;
-}
-
-button{
-  width:100%;
-}
-
-.top-info{
-  padding:15px;
-}
-
-}
-
-input,select,textarea{
-font-size:16px; /* mobile zoom issue fix */
-}
-
-/* 🔥 FINAL RESPONSIVE FIX */
-
-@media(max-width:768px){
-
-/* HEADER FIX */
-.header{
-  flex-direction:column;
-  align-items:flex-start;
-  gap:12px;
-}
-
-.logo svg{
-  width:140px;
-  height:auto;
-}
-
-.nav{
-  width:100%;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.nav a{
-  margin-left:0;
-}
-
-/* CONTAINER FIX */
-.container{
-  margin:15px;
-  padding:20px;
-}
-
-/* GRID FIX */
-.grid{
-  grid-template-columns:1fr;
-  gap:14px;
-}
-
-/* INPUT FIX */
-input,select,textarea{
-  font-size:16px;
-  width:100%;
-}
-
-/* BUTTON FULL WIDTH */
-button{
-  width:100%;
-  padding:14px;
-}
-
-/* COMPANY RADIO FIX */
-.inline{
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-/* TEXT FIX */
-.top-info{
-  padding:15px;
-  font-size:14px;
-}
-
-h2{
-  font-size:20px;
-}
-
-}
-
-/* EXTRA SMALL DEVICES */
-@media(max-width:480px){
-
-.logo svg{
-  width:120px;
-}
-
-.container{
-  margin:10px;
-  padding:15px;
-}
-
-h2{
-  font-size:18px;
-}
-
-}
-
-/* 🔥 MOBILE FINAL FIX */
-@media(max-width:768px){
-
-.grid{
-  grid-template-columns:1fr !important;
-}
-
-.field{
-  width:100%;
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100% !important;
-}
-
-}
-input,select,textarea{
-display:block;
+.top-info p{
+color:#202122;
+font-size:14px;
+line-height:1.7;
 }
 </style>
 </head>
@@ -295,15 +187,21 @@ display:block;
 
 <!-- HEADER -->
 <div class="header">
+
 <div class="logo">
-<svg viewBox="0 0 520 180" height="60">
+<svg viewBox="0 0 520 180">
+
 <g transform="translate(40,50) rotate(-12)">
-<polygon points="0,40 18,22 18,58" fill="#7C3BED"/>
-<polygon points="28,22 54,0 54,80 28,58" fill="#7C3BED"/>
-<polygon points="64,22 90,0 90,80 64,58" fill="#7C3BED"/>
-<polygon points="100,22 126,0 126,80 100,58" fill="#7C3BED"/>
+<polygon class="icon-part" points="0,40 18,22 18,58" fill="#7C3BED"/>
+<polygon class="icon-part" points="28,22 54,0 54,80 28,58" fill="#7C3BED"/>
+<polygon class="icon-part" points="64,22 90,0 90,80 64,58" fill="#7C3BED"/>
+<polygon class="icon-part" points="100,22 126,0 126,80 100,58" fill="#7C3BED"/>
 </g>
-<text x="200" y="105" font-size="68" fill="#7C3BED" font-weight="600">Go7</text>
+
+<text class="logo-text" x="200" y="105" font-size="68" fill="#7C3BED" font-weight="600">
+Go7
+</text>
+
 </svg>
 </div>
 
@@ -311,20 +209,22 @@ display:block;
 <a href="/">Home</a>
 <a href="/about">About</a>
 </div>
+
 </div>
 
+<!-- FORM -->
 <div class="container">
-
-<div class="top-info" id="premiumBox">
+  
+<!-- LEFT FORM -->
+<div class="form-box">
+  <div class="top-info">
 <h3>Premium Domain Opportunity</h3>
 <p>
 Go7.in is a short, memorable, and brandable domain ideal for startups and digital businesses. Easy to recall and market, it offers strong branding potential. Direct owner sale with fast, secure transfer for serious buyers.
 </p>
 </div>
 
-<h2 style="text-align:center;margin-bottom:20px;">
-Make an offer or inquiry for this domain
-</h2>
+<h2>Make an offer or inquiry for this domain</h2>
 
 <form id="form" onsubmit="sendMail(event)">
 <div class="grid">
@@ -352,14 +252,15 @@ Make an offer or inquiry for this domain
 <div class="field">
 <label>Offer <span>*</span></label>
 <input type="number" id="offer" min="50" required>
+<span class="note">Minimum: $50.00</span>
 </div>
 
 <div class="field">
 <label>Currency <span>*</span></label>
 <select id="currency" required>
-<option value="">Select</option>
-<option>USD</option>
-<option>INR</option>
+<option value="" disabled selected>Select</option>
+<option value="USD">USD</option>
+<option value="INR">INR</option>
 </select>
 </div>
 
@@ -368,31 +269,17 @@ Make an offer or inquiry for this domain
 <input value="Go7.in" readonly>
 </div>
 
-<div id="companyQuestion" class="inline">
-<span>Do you represent a company? <span style="color:red;">*</span></span>
-
-<label>
-<input type="radio" name="isCompany" value="no" checked onclick="hideCompany()"> No
-</label>
-
-<label>
-<input type="radio" name="isCompany" value="yes" onclick="showCompany()"> Yes
-</label>
-</div>
-
-<div class="field" id="companyField" style="display:none;">
-<label>Company Name <span>*</span></label>
-<input id="companyName">
-</div>
-
 <div class="field full">
 <label>Message <span>*</span></label>
 <textarea id="message" required></textarea>
 </div>
 
-<div class="cf-turnstile full" id="captchaBox"
-data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
-style="display:none;"></div>
+<div 
+  class="cf-turnstile full" 
+  id="captchaBox"
+  data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
+  style="display:none;">
+</div>
 
 </div>
 
@@ -401,100 +288,85 @@ style="display:none;"></div>
 
 </div>
 
+</div>
+
+<div class="success" id="successBox">
+<h2>Thank you! 🎉</h2>
+<p>Your inquiry has been sent successfully.</p>
+<div class="timer" id="timer">5</div>
+</div>
+
+</div>
+
 <script>
+  const inputs = document.querySelectorAll("#form input, #form textarea, #form select");
 
-function showCompany(){
-document.getElementById("companyQuestion").style.display="none";
-document.getElementById("companyField").style.display="block";
-}
-
-function hideCompany(){
-document.getElementById("companyField").style.display="none";
-document.getElementById("companyQuestion").style.display="flex";
-}
-
-const inputs=document.querySelectorAll("#form input,#form textarea,#form select");
-inputs.forEach(i=>i.addEventListener("input",checkForm));
+inputs.forEach(input => {
+  input.addEventListener("input", checkForm);
+});
 
 function checkForm(){
-let c=0;
-if(fname.value.trim())c++;
-if(lname.value.trim())c++;
-if(email.value.trim())c++;
-if(phone.value.trim())c++;
-if(offer.value.trim())c++;
-if(currency.value)c++;
-if(message.value.trim())c++;
+  let count = 0;
 
-if(c===7){
-captchaBox.style.display="block";
-}
-}
+  if(fname.value.trim()) count++;
+  if(lname.value.trim()) count++;
+  if(email.value.trim()) count++;
+  if(iti.isValidNumber()) count++;
+  if(offer.value.trim()) count++;
+  if(currency.value) count++;
+  if(message.value.trim()) count++;
 
-(function(){emailjs.init("RA7Yehviqu_UNulcU");})();
+  if(count >= 4){
+    document.getElementById("captchaBox").style.display = "block";
+  }
+}
+(function(){
+emailjs.init("RA7Yehviqu_UNulcU");
+})();
 
 function sendMail(e){
 e.preventDefault();
 
-const token=document.querySelector('[name="cf-turnstile-response"]');
-if(!token||!token.value){alert("Verify you are human");return;}
+const tokenInput=document.querySelector('[name="cf-turnstile-response"]');
+if(!tokenInput||!tokenInput.value){alert("Verify you are human");return;}
 
-const isCompany=document.querySelector('input[name="isCompany"]:checked').value;
-if(isCompany==="yes" && !companyName.value.trim()){
-alert("Enter company name");return;
-}
+if(!iti.isValidNumber()){alert("Enter valid phone number");return;}
+
+if(parseFloat(offer.value)<50){alert("Minimum $50");return;}
 
 const params={
 fname:fname.value,
 lname:lname.value,
 email:email.value,
-phone:phone.value,
+phone:iti.getNumber(),
 offer:offer.value,
 currency:currency.value,
 message:message.value,
-domain:"Go7.in",
-company:companyName.value||""
+domain:"Go7.in"
 };
 
 emailjs.send("service_y231ani","template_fin8z5k",params)
 .then(()=>{
 form.style.display="none";
-premiumBox.style.display="none";
-footerBox.style.display="none";
-
-const box=document.createElement("div");
-box.innerHTML=`
-<div style="text-align:center;margin-top:40px;">
-<h3 style="color:#16a34a;">✅ Inquiry Sent Successfully</h3>
-<p>Redirecting in <span id="timer">5</span> seconds...</p>
-</div>`;
-document.querySelector(".container").appendChild(box);
-
+successBox.style.display="block";
 let t=5;
-const timerEl=document.getElementById("timer");
-
-const interval=setInterval(()=>{
-t--;
-timerEl.innerText=t;
-
-if(t<=0){
-clearInterval(interval);
-window.location.href="/";
-}
+const i=setInterval(()=>{
+timer.innerText=--t;
+if(t<=0){clearInterval(i);window.location="/";}
 },1000);
 })
 .catch(()=>alert("Failed"));
 }
-
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
 <script>
-window.intlTelInput(document.querySelector("#phone"),{initialCountry:"IN"});
+const iti=window.intlTelInput(document.querySelector("#phone"),{
+initialCountry:"IN",
+utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+});
 </script>
 
-  <footer id="footerBox" style="text-align:center;margin:40px 0;color:#666;font-size:13px;">
-© 2026 Go7.in - All Rights Reserved.
-</footer>
 </body>
 </html>
