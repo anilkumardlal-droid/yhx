@@ -6,7 +6,7 @@
 
 <title>Make an Offer or Inquiry for Go7.in Domain</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -14,16 +14,56 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#fff;color:#202122;}
+body{background:#ffffff;color:#202122;}
 
-.container{max-width:1080px;margin:40px auto;padding:30px;}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+/* HEADER */
+.header{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav a{
+margin-left:20px;
+text-decoration:none;
+color:#202122;
+font-size:14px;
+font-weight:500;
+}
+.nav a:hover{color:#1a73e8;}
+
+/* FORM */
+.container{
+max-width:1080px;
+margin:40px auto;
+padding:30px;
+background:#fff;
+border-radius:12px;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+background: linear-gradient(90deg, #1dbafa, #f9b606);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
 
 .field{display:flex;flex-direction:column;}
 label{font-size:13px;margin-bottom:6px;}
 label span{color:#ff4d4f;}
 
 input,select,textarea{
+width:100%;
 padding:12px;
 border:1px solid #d8dae0;
 border-radius:8px;
@@ -38,7 +78,7 @@ margin-top:20px;
 padding:14px 30px;
 border:none;
 border-radius:30px;
-background:#4f46e5;
+background: linear-gradient(135deg, #4f46e5, #6d28d9);
 color:#fff;
 cursor:pointer;
 }
@@ -51,11 +91,32 @@ cursor:pointer;
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+
+<div class="logo">
+<svg viewBox="0 0 520 180" height="60">
+<g transform="translate(40,50) rotate(-12)">
+<polygon points="0,40 18,22 18,58" fill="#7C3BED"/>
+<polygon points="28,22 54,0 54,80 28,58" fill="#7C3BED"/>
+<polygon points="64,22 90,0 90,80 64,58" fill="#7C3BED"/>
+<polygon points="100,22 126,0 126,80 100,58" fill="#7C3BED"/>
+</g>
+<text x="200" y="105" font-size="68" fill="#7C3BED" font-weight="600">Go7</text>
+</svg>
+</div>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/about">About</a>
+</div>
+
+</div>
+
+<!-- FORM -->
 <div class="container">
 
-<h2 style="text-align:center;margin-bottom:20px;">
-Make an offer or inquiry
-</h2>
+<h2>Make an offer or inquiry for this domain</h2>
 
 <form id="form" onsubmit="sendMail(event)">
 <div class="grid">
@@ -112,7 +173,7 @@ Make an offer or inquiry
 </label>
 </div>
 
-<!-- COMPANY FIELD -->
+<!-- COMPANY -->
 <div class="field" id="companyField" style="display:none;">
 <label>Company Name <span>*</span></label>
 <input id="companyName">
