@@ -4,87 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Make an Offer or Inquiry for Go7.in Domain</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<title>Domain Inquiry</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#ffffff;color:#202122;}
-.container{max-width:1080px;margin:40px auto;padding:30px;}
+body{font-family:Arial;background:#fff;padding:30px;}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .field{display:flex;flex-direction:column;}
 label{font-size:13px;margin-bottom:6px;}
-label span{color:#ff4d4f;}
-input,select,textarea{padding:12px;border:1px solid #d8dae0;border-radius:8px;background:#F9F9F9;}
-textarea{height:120px;}
+label span{color:red;}
+input,textarea{padding:10px;border:1px solid #ccc;border-radius:6px;}
 .full{grid-column:span 2;}
-button{margin-top:20px;padding:14px 30px;border:none;border-radius:30px;background:#4f46e5;color:#fff;cursor:pointer;}
 @media(max-width:768px){.grid{grid-template-columns:1fr;}}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h2 style="text-align:center;margin-bottom:20px;">Make an offer or inquiry</h2>
-
-<form id="form" onsubmit="sendMail(event)">
+<form>
 <div class="grid">
-
-<div class="field">
-<label>First Name <span>*</span></label>
-<input id="fname" required>
-</div>
-
-<div class="field">
-<label>Last Name <span>*</span></label>
-<input id="lname" required>
-</div>
-
-<div class="field">
-<label>Email <span>*</span></label>
-<input type="email" id="email" required>
-</div>
-
-<div class="field">
-<label>Phone <span>*</span></label>
-<input id="phone" type="tel" required>
-</div>
-
-<div class="field">
-<label>Offer <span>*</span></label>
-<input type="number" id="offer" min="50" required>
-</div>
-
-<div class="field">
-<label>Currency <span>*</span></label>
-<select id="currency" required>
-<option value="">Select</option>
-<option>USD</option>
-<option>INR</option>
-</select>
-</div>
 
 <div class="field">
 <label>Domain</label>
 <input value="Go7.in" readonly>
 </div>
 
-<!-- YES / NO -->
-<div style="font-size:13px;">
+<!-- QUESTION -->
+<div id="companyQuestion" style="font-size:13px; margin-top:6px;">
 <span>Do you represent a company? <span style="color:red;">*</span></span>
 
 <label style="margin-left:10px;">
-<input type="radio" name="isCompany" value="no" checked onchange="toggleCompanyField()"> No
+<input type="radio" name="isCompany" value="no" checked onclick="hideCompany()"> No
 </label>
 
 <label style="margin-left:10px;">
-<input type="radio" name="isCompany" value="yes" onchange="toggleCompanyField()"> Yes
+<input type="radio" name="isCompany" value="yes" onclick="showCompany()"> Yes
 </label>
 </div>
 
@@ -96,73 +49,24 @@ button{margin-top:20px;padding:14px 30px;border:none;border-radius:30px;backgrou
 
 <div class="field full">
 <label>Message <span>*</span></label>
-<textarea id="message" required></textarea>
+<textarea></textarea>
 </div>
 
-<div class="cf-turnstile full" data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"></div>
-
 </div>
-
-<button type="submit">Send Inquiry</button>
 </form>
-</div>
 
 <script>
 
-function toggleCompanyField(){
-const val=document.querySelector('input[name="isCompany"]:checked').value;
-const field=document.getElementById("companyField");
-const input=document.getElementById("companyName");
-
-if(val==="yes"){
-field.style.display="block";
-input.setAttribute("required","required");
-}else{
-field.style.display="none";
-input.removeAttribute("required");
-input.value="";
-}
+function showCompany(){
+document.getElementById("companyQuestion").style.display="none";
+document.getElementById("companyField").style.display="block";
 }
 
-(function(){
-emailjs.init("RA7Yehviqu_UNulcU");
-})();
-
-function sendMail(e){
-e.preventDefault();
-
-const isCompany=document.querySelector('input[name="isCompany"]:checked').value;
-
-if(isCompany==="yes" && !companyName.value.trim()){
-alert("Enter company name");
-return;
+function hideCompany(){
+document.getElementById("companyField").style.display="none";
+document.getElementById("companyQuestion").style.display="block";
 }
 
-const params={
-fname:fname.value,
-lname:lname.value,
-email:email.value,
-phone:phone.value,
-offer:offer.value,
-currency:currency.value,
-message:message.value,
-domain:"Go7.in",
-company:companyName.value || ""
-};
-
-emailjs.send("service_y231ani","template_fin8z5k",params)
-.then(()=>alert("Sent Successfully"))
-.catch(()=>alert("Failed"));
-}
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-
-<script>
-window.intlTelInput(document.querySelector("#phone"),{
-initialCountry:"IN"
-});
 </script>
 
 </body>
