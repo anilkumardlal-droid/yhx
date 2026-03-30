@@ -293,7 +293,7 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 
 <div id="companyFields" style="display:none;">
 <label>Company Name <span style="color:red">*</span></label>
-<input style="width:100%;">
+<input id="companyName" style="width:100%;">
 </div>
 
 </div>
@@ -362,6 +362,15 @@ if(!tokenInput||!tokenInput.value){alert("Verify you are human");return;}
 if(!iti.isValidNumber()){alert("Enter valid phone number");return;}
 
 if(parseFloat(offer.value)<50){alert("Minimum $50");return;}
+
+const isCompanyYes = document.querySelector('input[name="company"]:checked').value === "on";
+
+if(isCompanyYes){
+  if(!companyName.value.trim()){
+    alert("Please enter Company Name");
+    return;
+  }
+}
 
 const params={
 fname:fname.value,
