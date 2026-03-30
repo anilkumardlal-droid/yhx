@@ -370,15 +370,11 @@ const isCompanyYes = document.querySelector('input[name="company"]:checked').val
 
 if(isCompanyYes){
   if(!companyName.value.trim()){
-    if(isCompanyYes){
-  if(!companyName.value.trim()){
     document.getElementById("companyError").style.display = "block";
     companyName.focus();
     return;
   }else{
     document.getElementById("companyError").style.display = "none";
-  }
-}
   }
 }
 
@@ -422,11 +418,15 @@ utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.j
 function showCompany(){
 document.getElementById("companyToggle").style.display="none";
 document.getElementById("companyFields").style.display="block";
+
+document.getElementById("companyName").setAttribute("required","true");
 }
 
 function hideCompany(){
 document.getElementById("companyToggle").style.display="block";
 document.getElementById("companyFields").style.display="none";
+
+document.getElementById("companyName").removeAttribute("required");
 }
 </script>
 </body>
