@@ -267,7 +267,7 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 <div class="field">
 <label>Currency <span>*</span></label>
 <select id="currency" required>
-<option value="" disabled selected>Select</option>
+<option value="" disabled>Select</option>
 <option value="USD">USD</option>
 <option value="INR">INR</option>
 </select>
@@ -383,7 +383,7 @@ getRate();
 
 async function setCurrencyByCountry(){
   try{
-    const res = await fetch("https://ipapi.co/json/");
+   const res = await fetch("https://ipwho.is/");
     const data = await res.json();
 
     const country = data.country_code;
@@ -399,7 +399,7 @@ async function setCurrencyByCountry(){
   }
 }
 
-setCurrencyByCountry();
+window.addEventListener("load", setCurrencyByCountry);
   
 function sendMail(e){
 e.preventDefault();
@@ -476,7 +476,7 @@ const iti=window.intlTelInput(document.querySelector("#phone"),{
 initialCountry:"auto",
 
 geoIpLookup: function(callback){
-  fetch("https://ipapi.co/json/")
+  fetch("https://ipwho.is/")
     .then(res => res.json())
     .then(data => callback(data.country_code))
     .catch(() => callback("IN"));
