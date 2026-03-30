@@ -277,6 +277,27 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 <input value="Go7.in" readonly>
 </div>
 
+<div class="field">
+
+<div id="companyToggle" style="margin-top:22px;">
+<label style="display:block;">Do you have a company?</label>
+
+<label style="margin-right:10px;">
+<input type="radio" name="company" checked onclick="hideCompany()"> No
+</label>
+
+<label>
+<input type="radio" name="company" onclick="showCompany()"> Yes
+</label>
+</div>
+
+<div id="companyFields" style="display:none;">
+<label>Company Name <span style="color:red">*</span></label>
+<input style="width:100%;">
+</div>
+
+</div>
+
 <div class="field full">
 <label>Message <span>*</span></label>
 <textarea id="message" required></textarea>
@@ -378,7 +399,16 @@ utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.j
 
 <footer style="text-align:center; font-size:13px; color:#5f6368; margin:40px 0;">
 <p>© 2026 Go7.in - All Rights Reserved.</p>
-</footer>
+</footer><script>
+function showCompany(){
+document.getElementById("companyToggle").style.display="none";
+document.getElementById("companyFields").style.display="block";
+}
 
+function hideCompany(){
+document.getElementById("companyToggle").style.display="block";
+document.getElementById("companyFields").style.display="none";
+}
+</script>
 </body>
 </html>
