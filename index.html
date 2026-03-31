@@ -31,13 +31,6 @@ body{
   overflow-x:hidden;
 }
 
-body{
-  background:url('https://raw.githubusercontent.com/anilkumardlal-droid/go7/main/hero-bg.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat; /* 👈 IMPORTANT */
-}
-
 .header{
 background: transparent;
 max-width:1200px;
@@ -293,10 +286,20 @@ color:#5a19da;
   transform: translateY(-2px) scale(1.02);
   box-shadow:0 10px 25px rgba(124,59,237,0.35);
 }
+
+.top-bg{
+  width:100%;
+  background:url('https://raw.githubusercontent.com/anilkumardlal-droid/go7/main/hero-bg.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
 </style>
 </head>
 
 <body>
+
+<div class="top-bg">
 
 <div class="header">
 <div class="logo">
@@ -417,10 +420,9 @@ if (window.location.pathname === "/index" || window.location.pathname === "/inde
 }
 </script>
   
-<footer style="text-align:center; font-size:13px; color:#5f6368; margin:40px 0; background:#fff; padding:20px 0;">
-  <p>© 2026 Go7.in - All Rights Reserved.</p>
-</footer>
-<script>
+<footer style="text-align:center; font-size:13px; color:#5f6368; margin:40px 0;">
+<p>© 2026 Go7.in - All Rights Reserved.</p>
+</footer><script>
   
 </body>
 </html>
