@@ -30,6 +30,7 @@ overflow-x:hidden;
 }
 
 /* BACKGROUND */
+
 body::before{
 content:"";
 position:fixed;
@@ -52,30 +53,22 @@ left:-200px;
 z-index:-1;
 }
 
-/* HEADER */
+/* MAIN CONTAINER */
 
-.header{
-max-width:1200px;
-margin:auto;
-padding:28px 20px;
-display:flex;
-justify-content:flex-end;
-align-items:center;
+.container{
+max-width:1100px;
+width:calc(100% - 40px);
+margin:40px auto;
+padding:40px;
+background:#0d1017;
+border:1px solid rgba(255,255,255,0.06);
+border-radius:28px;
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+inset 0 1px 0 rgba(255,255,255,.04);
+backdrop-filter:blur(20px);
 }
 
-.nav a{
-margin-left:28px;
-text-decoration:none;
-color:#d7d7d7;
-font-size:14px;
-font-weight:500;
-transition:.3s;
-}
-
-.nav a:hover{
-color:#fff;
-}
-  
 /* HERO */
 
 .hero{
@@ -278,9 +271,10 @@ color:#7d8597;
 @media(max-width:768px){
 
 .container{
-padding:24px;
-margin:20px;
-border-radius:24px;
+padding:22px;
+width:calc(100% - 20px);
+margin:10px auto;
+border-radius:22px;
 }
 
 .domain{
@@ -407,6 +401,10 @@ Send Inquiry
 <p>Your inquiry has been sent successfully.</p>
 <div class="timer" id="timer">5</div>
 </div>
+
+<footer>
+© 2026 YHX.in - All Rights Reserved.
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
