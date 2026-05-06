@@ -350,6 +350,27 @@ h2{
 /* MOBILE */
 @media(max-width:480px){
 
+  body{
+    background:#000000;
+  }
+
+  .video-overlay{
+
+    background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.82),
+      rgba(0,0,0,.92)
+    );
+
+  }
+
+  .light{
+    opacity:.35;
+    filter:blur(80px);
+  }
+
   .hero{
     padding:24px 14px;
   }
@@ -370,6 +391,7 @@ h2{
 
   .desc{
     line-height:1.75;
+    color:#d7def0;
   }
 
   .features{
@@ -379,6 +401,9 @@ h2{
   .feature{
     width:100%;
     text-align:center;
+    background:rgba(0,0,0,.28);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;
   }
 
   .buttons{
