@@ -4,238 +4,365 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Make an Offer or Inquiry for Go7.in Domain</title>
+<title>YHX.in - Premium Domain</title>
 
-<meta name="description" content="Make an offer or inquiry for Go7.in domain. Buy directly from owner with fast, secure transfer. Serious buyers only.">
+<meta name="description" content="Make an offer or inquiry for YHX.in domain. Premium 3-letter brandable domain for startups, AI, tech and digital businesses.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#ffffff;color:#202122;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#05060a;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#7c3bed33 0%,transparent 70%);
+top:-200px;
+right:-200px;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00d4ff22 0%,transparent 70%);
+bottom:-200px;
+left:-200px;
+z-index:-1;
+}
 
 /* HEADER */
+
 .header{
 max-width:1200px;
 margin:auto;
-padding:20px;
+padding:28px 20px;
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
 }
 
-.logo svg{
-height:60px;
-display:block;
-}
-
 .nav a{
-margin-left:20px;
+margin-left:28px;
 text-decoration:none;
-color:#202122;
+color:#d7d7d7;
 font-size:14px;
 font-weight:500;
+transition:.3s;
 }
-.nav a:hover{color:#1a73e8;}
 
-/* FORM */
+.nav a:hover{
+color:#fff;
+}
+
+/* MAIN */
+
 .container{
-max-width:1080px;
+max-width:1100px;
 margin:40px auto;
-padding:30px;
-background:#fff;
-border-radius:12px;
+padding:40px;
+background:#0d1017;
+border:1px solid rgba(255,255,255,0.06);
+border-radius:28px;
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+inset 0 1px 0 rgba(255,255,255,.04);
+backdrop-filter:blur(20px);
 }
 
-h2{
+/* HERO */
+
+.hero{
 text-align:center;
-margin-bottom:30px;
-background: linear-gradient(90deg, #1dbafa, #f9b606);
+margin-bottom:40px;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:100px;
+background:rgba(124,59,237,0.15);
+border:1px solid rgba(124,59,237,.3);
+font-size:13px;
+color:#d9c7ff;
+margin-bottom:24px;
+}
+
+.domain{
+font-size:90px;
+font-weight:700;
+letter-spacing:-4px;
+line-height:1;
+background:linear-gradient(90deg,#fff,#bdbdbd);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-letter-spacing: -0.03em;
+margin-bottom:18px;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+color:#a0a8b8;
+font-size:16px;
+line-height:1.8;
+}
+
+/* FEATURES */
+
+.features{
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.feature{
+padding:12px 18px;
+border-radius:16px;
+background:#131722;
+border:1px solid rgba(255,255,255,.06);
+font-size:14px;
+color:#fff;
+}
+
+/* FORM */
+
+.form-box{
+margin-top:50px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:16px;
+gap:18px;
 }
 
-.field{display:flex;flex-direction:column;}
-label{font-size:13px;margin-bottom:6px;}
+.field{
+display:flex;
+flex-direction:column;
+}
 
-label span{color:#ff4d4f;}
+label{
+font-size:13px;
+margin-bottom:8px;
+color:#d9d9d9;
+}
 
-input,select,textarea{
-padding:12px;
-border:1px solid #d8dae0;
-border-radius:8px;
-background:#faf7ff;
+label span{
+color:#ff4d4f;
+}
+
+input,
+select,
+textarea{
+padding:15px;
+border-radius:16px;
+border:1px solid #232838;
+background:#141926;
+color:#fff;
+font-size:15px;
+transition:.3s;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-  outline: none;
-  border: 1px solid #7c3bed;
-  box-shadow: 0 0 0 2px rgba(124,59,237,0.15);
+outline:none;
+border:1px solid #7c3bed;
+box-shadow:0 0 0 4px rgba(124,59,237,.15);
 }
 
-textarea{height:120px;}
-.full{grid-column:span 2;}
+textarea{
+height:130px;
+resize:none;
+}
+
+.full{
+grid-column:span 2;
+}
+
+/* BUTTON */
 
 button{
-  margin-top:20px;
-  padding:14px 30px;
-  border:none;
-  border-radius:30px;
- background: linear-gradient(135deg, #4f46e5, #6d28d9);
-  color:#fff;
-  font-weight:500;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  position:relative;
-  overflow:hidden;
+margin-top:25px;
+padding:16px 32px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#7c3bed,#5b21b6);
+color:#fff;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+width:100%;
+position:relative;
+overflow:hidden;
 }
 
 button:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 12px 30px rgba(0,0,0,0.18);
-}
-
-button:active{
-  transform:scale(0.96);
+transform:translateY(-3px);
+box-shadow:0 18px 40px rgba(124,59,237,.35);
 }
 
 button::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-  transition:0.5s;
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);
+transition:.6s;
 }
 
 button:hover::after{
-  left:100%;
+left:120%;
 }
 
-.note{font-size:12px;color:#888;margin-top:4px;}
+/* NOTE */
 
-.success{display:none;text-align:center;padding:40px;}
-.timer{font-size:22px;color:#ff4d4f;margin-top:10px;}
-
-/* SVG Animation */
-.icon-part {
-opacity: 0;
-transform: translateY(10px);
-animation: iconIn 0.6s ease forwards;
-}
-.icon-part:nth-child(1){animation-delay:0.1s;}
-.icon-part:nth-child(2){animation-delay:0.2s;}
-.icon-part:nth-child(3){animation-delay:0.3s;}
-.icon-part:nth-child(4){animation-delay:0.4s;}
-
-.logo-text{
-opacity:0;
-transform:translateX(20px);
-animation:textIn 0.8s ease forwards;
-animation-delay:0.5s;
+.note{
+font-size:12px;
+color:#8e97a8;
+margin-top:6px;
 }
 
-@keyframes iconIn{
-to{opacity:1;transform:translateY(0);}
-}
-@keyframes textIn{
-to{opacity:1;transform:translateX(0);}
+/* SUCCESS */
+
+.success{
+display:none;
+text-align:center;
+padding:60px 20px;
 }
 
-/* phone fix */
-.iti{width:100%;}
-.iti input{width:100%!important;padding-left:50px!important;}
+.success h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.timer{
+font-size:32px;
+margin-top:20px;
+color:#7c3bed;
+}
+
+/* PHONE */
+
+.iti{
+width:100%;
+}
+
+.iti input{
+width:100%!important;
+padding-left:52px!important;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px 20px;
+font-size:13px;
+color:#7d8597;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
-.grid{grid-template-columns:1fr;}
-.full{grid-column:span 1;}
+
+.container{
+padding:24px;
+margin:20px;
+border-radius:24px;
 }
 
-.form-box{
-background:#fff;
+.domain{
+font-size:58px;
 }
 
-  .top-info{
-border-left:6px solid #7c3bed;
-border-radius:8px;
-padding:20px;
-margin-bottom:25px;
-background: #faf7ff;
+.grid{
+grid-template-columns:1fr;
 }
 
-.top-info h3{
-margin-bottom:8px;
-color:#202122;
+.full{
+grid-column:span 1;
 }
 
-.top-info p{
-color:#202122;
+.hero p{
 font-size:14px;
-line-height:1.7;
 }
+
+.features{
+gap:12px;
+}
+
+.feature{
+width:100%;
+text-align:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-
-<div class="logo">
-<svg viewBox="0 0 520 180">
-
-<g transform="translate(40,50) rotate(-12)">
-<polygon class="icon-part" points="0,40 18,22 18,58" fill="#7C3BED"/>
-<polygon class="icon-part" points="28,22 54,0 54,80 28,58" fill="#7C3BED"/>
-<polygon class="icon-part" points="64,22 90,0 90,80 64,58" fill="#7C3BED"/>
-<polygon class="icon-part" points="100,22 126,0 126,80 100,58" fill="#7C3BED"/>
-</g>
-
-<text class="logo-text" x="200" y="105" font-size="68" fill="#7C3BED" font-weight="600">
-Go7
-</text>
-
-</svg>
-</div>
-
 <div class="nav">
 <a href="/">Home</a>
 <a href="/about">About</a>
 </div>
-
 </div>
 
-<!-- FORM -->
 <div class="container">
-  
-<!-- LEFT FORM -->
-<div class="form-box">
-  <div class="top-info">
-<h3>Premium Domain Opportunity</h3>
-<p>
-Go7.in is a short, memorable, and brandable domain ideal for startups and digital businesses. Easy to recall and market, it offers strong branding potential. Direct owner sale with fast, secure transfer for serious buyers.
-</p>
+
+<div class="hero">
+
+<div class="badge">
+🔥 Premium 3-Letter Domain
 </div>
 
-<h2>Make an offer or inquiry for this domain</h2>
+<h1 class="domain">YHX.in</h1>
+
+<p>
+YHX.in is a rare and highly brandable 3-letter premium domain perfect for AI startups, modern tech companies, SaaS platforms, digital products, and future-focused online businesses.
+</p>
+
+<div class="features">
+<div class="feature">⚜️ Premium Brand</div>
+<div class="feature">🛕🇮🇳 Indian Identity</div>
+<div class="feature">🚀 Startup Ready</div>
+</div>
+
+</div>
+
+<div class="form-box">
 
 <form id="form" onsubmit="sendMail(event)">
+
 <div class="grid">
 
 <div class="field">
@@ -261,45 +388,16 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 <div class="field">
 <label>Offer <span>*</span></label>
 <input type="number" id="offer" min="300" required>
-<span class="note" id="minNote">Loading...</span>
+<span class="note" id="minNote">Minimum offer loading...</span>
 </div>
 
 <div class="field">
 <label>Currency <span>*</span></label>
 <select id="currency" required>
-<option value="" disabled>Select</option>
+<option value="" disabled selected>Select</option>
 <option value="USD">USD</option>
 <option value="INR">INR</option>
 </select>
-</div>
-
-<div class="field">
-<label>Domain</label>
-<input value="Go7.in" readonly>
-</div>
-
-<div class="field">
-
-<div id="companyToggle" style="margin-top:22px;">
-<label style="display:block;">Do you have a company?</label>
-
-<label style="margin-right:10px;">
-<input type="radio" name="company" value="no" checked onclick="hideCompany()"> No
-</label>
-
-<label>
-<input type="radio" name="company" value="yes" onclick="showCompany()"> Yes
-</label>
-</div>
-
-<div id="companyFields" style="display:none;">
-<label>Company Name <span style="color:red">*</span></label>
-<input id="companyName" style="width:100%;">
-<span id="companyError" style="color:#ff4d4f; font-size:12px; display:none; margin-top:4px;">
-Company Name is required
-</span>
-</div>
-
 </div>
 
 <div class="field full">
@@ -308,15 +406,18 @@ Company Name is required
 </div>
 
 <div 
-  class="cf-turnstile full" 
-  id="captchaBox"
-  data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
-  style="display:none;">
+class="cf-turnstile full"
+id="captchaBox"
+data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
+style="display:none;">
 </div>
 
 </div>
 
-<button type="submit">Send Inquiry</button>
+<button type="submit">
+Send Inquiry
+</button>
+
 </form>
 
 </div>
@@ -324,123 +425,137 @@ Company Name is required
 </div>
 
 <div class="success" id="successBox">
-<h2>Thank you! 🎉</h2>
+<h2>Thank You 🎉</h2>
 <p>Your inquiry has been sent successfully.</p>
 <div class="timer" id="timer">5</div>
 </div>
 
-</div>
+<footer>
+© 2026 YHX.in - All Rights Reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
 <script>
-  const inputs = document.querySelectorAll("#form input, #form textarea, #form select");
 
-inputs.forEach(input => {
-  input.addEventListener("input", checkForm);
-});
-
-function checkForm(){
-  let count = 0;
-
-  if(fname.value.trim()) count++;
-  if(lname.value.trim()) count++;
-  if(email.value.trim()) count++;
-  if(iti.isValidNumber()) count++;
-  if(offer.value.trim()) count++;
-  if(currency.value) count++;
-  if(message.value.trim()) count++;
-
-  if(count >= 4){
-    document.getElementById("captchaBox").style.display = "block";
-  }
-}
 (function(){
 emailjs.init("RA7Yehviqu_UNulcU");
 })();
 
-let minINR = 28000; // fallback
+const iti=window.intlTelInput(document.querySelector("#phone"),{
+initialCountry:"auto",
 
-async function getRate(){
-  try{
-    const res = await fetch("https://api.frankfurter.app/latest?from=USD&to=INR");
-    const data = await res.json();
+geoIpLookup:function(callback){
+fetch("https://ipwho.is/")
+.then(res=>res.json())
+.then(data=>callback(data.country_code))
+.catch(()=>callback("IN"));
+},
 
-    const usdToInr = data.rates.INR;
+utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+});
 
-    const minUSD = 300;
-    minINR = Math.round(minUSD * usdToInr);
+const inputs=document.querySelectorAll("#form input,#form textarea,#form select");
 
-    // UI update
-    document.getElementById("minNote").innerText =
-      "Minimum: $" + minUSD + " (≈ ₹" + minINR + ")";
-  }catch{
-    document.getElementById("minNote").innerText =
-      "Minimum: $300 (≈ ₹" + minINR + ")";
-  }
+inputs.forEach(input=>{
+input.addEventListener("input",checkForm);
+});
+
+function checkForm(){
+
+let count=0;
+
+if(fname.value.trim()) count++;
+if(lname.value.trim()) count++;
+if(email.value.trim()) count++;
+if(iti.isValidNumber()) count++;
+if(offer.value.trim()) count++;
+if(currency.value) count++;
+if(message.value.trim()) count++;
+
+if(count>=4){
+document.getElementById("captchaBox").style.display="block";
 }
 
-// 🔥 call function
+}
+
+let minINR=28000;
+
+async function getRate(){
+
+try{
+
+const res=await fetch("https://api.frankfurter.app/latest?from=USD&to=INR");
+const data=await res.json();
+
+const usdToInr=data.rates.INR;
+
+const minUSD=300;
+
+minINR=Math.round(minUSD*usdToInr);
+
+document.getElementById("minNote").innerText=
+"Minimum: $" + minUSD + " (≈ ₹" + minINR + ")";
+
+}catch{
+
+document.getElementById("minNote").innerText=
+"Minimum: $300 (≈ ₹" + minINR + ")";
+
+}
+
+}
+
 getRate();
 
 async function setCurrencyByCountry(){
-  try{
-   const res = await fetch("https://ipwho.is/");
-    const data = await res.json();
 
-    const country = data.country_code;
+try{
 
-    if(country === "IN"){
-      currency.value = "INR";
-    }else{
-      currency.value = "USD";
-    }
+const res=await fetch("https://ipwho.is/");
+const data=await res.json();
 
-  }catch{
-    currency.value = "USD";
-  }
+if(data.country_code==="IN"){
+currency.value="INR";
+}else{
+currency.value="USD";
 }
 
-window.addEventListener("load", setCurrencyByCountry);
-  
+}catch{
+currency.value="USD";
+}
+
+}
+
+window.addEventListener("load",setCurrencyByCountry);
+
 function sendMail(e){
+
 e.preventDefault();
 
 const tokenInput=document.querySelector('[name="cf-turnstile-response"]');
-if(!tokenInput||!tokenInput.value){alert("Verify you are human");return;}
 
-if(!iti.isValidNumber()){alert("Enter valid phone number");return;}
-
-// 🔥 INR check (300 USD ≈ 28300 INR)
-const offerValue = parseFloat(offer.value);
-const currencyValue = currency.value;
-
-const minUSD = 300;
-
-// ✅ USD check
-if(currencyValue === "USD"){
-  if(offerValue < minUSD){
-    alert("Minimum $" + minUSD);
-    return;
-  }
+if(!tokenInput || !tokenInput.value){
+alert("Verify you are human");
+return;
 }
 
-// ✅ INR check (API वाला minINR)
-if(currencyValue === "INR"){
-  if(offerValue < minINR){
-    alert("Minimum ₹" + minINR);
-    return;
-  }
+if(!iti.isValidNumber()){
+alert("Enter valid phone number");
+return;
 }
 
-const isCompanyYes = document.querySelector('input[name="company"]:checked').value === "yes";
+const offerValue=parseFloat(offer.value);
+const currencyValue=currency.value;
 
-if(isCompanyYes){
-  if(!companyName.value.trim()){
-    document.getElementById("companyError").style.display = "block";
-    companyName.focus();
-    return;
-  }else{
-    document.getElementById("companyError").style.display = "none";
-  }
+if(currencyValue==="USD" && offerValue<300){
+alert("Minimum $300");
+return;
+}
+
+if(currencyValue==="INR" && offerValue<minINR){
+alert("Minimum ₹" + minINR);
+return;
 }
 
 const params={
@@ -451,57 +566,36 @@ phone:iti.getNumber(),
 offer:offer.value,
 currency:currency.value,
 message:message.value,
-domain:"Go7.in"
+domain:"YHX.in"
 };
 
 emailjs.send("service_y231ani","template_fin8z5k",params)
+
 .then(()=>{
+
 form.style.display="none";
 successBox.style.display="block";
+
 let t=5;
+
 const i=setInterval(()=>{
+
 timer.innerText=--t;
-if(t<=0){clearInterval(i);window.location="/";}
+
+if(t<=0){
+clearInterval(i);
+window.location="/";
+}
+
 },1000);
+
 })
+
 .catch(()=>alert("Failed"));
+
 }
 
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-
-<script>
-const iti=window.intlTelInput(document.querySelector("#phone"),{
-initialCountry:"auto",
-
-geoIpLookup: function(callback){
-  fetch("https://ipwho.is/")
-    .then(res => res.json())
-    .then(data => callback(data.country_code))
-    .catch(() => callback("IN"));
-},
-
-utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
-});
-</script>
-
-<footer style="text-align:center; font-size:13px; color:#5f6368; margin:40px 0;">
-<p>© 2026 Go7.in - All Rights Reserved.</p>
-</footer><script>
-function showCompany(){
-document.getElementById("companyToggle").style.display="none";
-document.getElementById("companyFields").style.display="block";
-
-document.getElementById("companyName").setAttribute("required","true");
-}
-
-function hideCompany(){
-document.getElementById("companyToggle").style.display="block";
-document.getElementById("companyFields").style.display="none";
-
-document.getElementById("companyName").removeAttribute("required");
-}
-</script>
 </body>
 </html>
