@@ -37,7 +37,8 @@ body{
   z-index:-4;
 }
 
-/* OVERLAY */
+
+/* DARK OVERLAY */
 .video-overlay{
   position:fixed;
   inset:0;
@@ -45,9 +46,9 @@ body{
   background:
   linear-gradient(
     to bottom,
-    rgba(5,8,20,.50),
-    rgba(5,8,20,.28),
-    rgba(5,8,20,.58)
+    rgba(0,0,0,.72),
+    rgba(5,8,20,.60),
+    rgba(0,0,0,.78)
   );
 
   z-index:-3;
