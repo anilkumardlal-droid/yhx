@@ -110,8 +110,6 @@ body{
   background:var(--glass);
   border:1px solid var(--border);
 
-  backdrop-filter:blur(14px);
-
   color:#dce6ff;
 
   font-size:12px;
