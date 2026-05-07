@@ -246,16 +246,16 @@ h2{
 .btn{
   padding:14px 28px;
   border:none;
-  border-radius:14px;
+  border-radius:6px;
   font-size:16px;
-  font-weight:600;
+  font-weight:400;
   cursor:pointer;
   transition:.25s ease;
 }
 
 /* PRIMARY */
 .primary{
-  background:#4d8fff;
+  background:#0756dc;
   color:#ffffff;
   box-shadow:0 8px 20px rgba(77,143,255,.25);
 }
