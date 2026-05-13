@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>YHX.IN — Premium Domain</title>
-
-<meta name="description" content="Premium domain inquiry page for YHX.IN">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,6 +13,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <style>
@@ -30,8 +30,6 @@ box-sizing:border-box;
 --border:rgba(255,255,255,.08);
 --text:#fff;
 --muted:rgba(255,255,255,.58);
---cyan:#00ffd5;
---blue:#0066ff;
 }
 
 html{
@@ -63,8 +61,7 @@ radial-gradient(circle at center, rgba(123,44,255,.12), transparent 45%),
 #040816;
 }
 
-.bg::before{
-content:"";
+.bg-grid{
 position:absolute;
 inset:0;
 
@@ -74,7 +71,14 @@ linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
 
 background-size:70px 70px;
 
-mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+mask-image:
+linear-gradient(
+to bottom,
+transparent,
+black 20%,
+black 80%,
+transparent
+);
 }
 
 .blur{
@@ -124,7 +128,7 @@ justify-content:center;
 }
 
 /* =========================
-WRAP
+LAYOUT
 ========================= */
 
 .wrapper{
@@ -144,8 +148,6 @@ LEFT
 .left{
 position:relative;
 }
-
-/* BADGE */
 
 .badge{
 display:inline-flex;
@@ -206,6 +208,8 @@ line-height:.82;
 
 .domain .main{
 
+position:relative;
+
 font-size:clamp(100px,17vw,250px);
 
 font-weight:900;
@@ -229,13 +233,12 @@ text-shadow:
 0 0 80px rgba(0,255,208,.12);
 }
 
-/* DEPTH */
-
 .domain .main::before{
 
 content:"YHX";
 
 position:absolute;
+inset:0;
 
 z-index:-1;
 
@@ -251,8 +254,6 @@ transform:
 translateY(10px)
 scale(1.04);
 }
-
-/* .IN */
 
 .domain .ext{
 
@@ -285,8 +286,6 @@ text-transform:uppercase;
 
 color:rgba(255,255,255,.72);
 }
-
-/* LIGHT */
 
 .domain-wrap::before{
 content:"";
@@ -354,7 +353,7 @@ font-weight:600;
 }
 
 /* =========================
-RIGHT FORM
+FORM
 ========================= */
 
 .form-card{
@@ -381,8 +380,6 @@ box-shadow:
 0 40px 120px rgba(0,0,0,.5);
 }
 
-/* LIGHT */
-
 .form-card::before{
 content:"";
 
@@ -402,9 +399,11 @@ radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
 filter:blur(50px);
 }
 
-/* FORM */
+/* =========================
+FORM GRID
+========================= */
 
-.grid{
+.form-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:18px;
@@ -432,7 +431,9 @@ label span{
 color:#ff4d4f;
 }
 
-/* INPUT */
+/* =========================
+INPUT
+========================= */
 
 input,
 textarea,
@@ -479,8 +480,6 @@ height:140px;
 resize:none;
 }
 
-/* PHONE */
-
 .iti{
 width:100%;
 }
@@ -490,15 +489,15 @@ width:100%!important;
 padding-left:52px!important;
 }
 
-/* NOTE */
-
 .note{
 margin-top:8px;
 font-size:12px;
 color:#8e97aa;
 }
 
-/* BUTTON */
+/* =========================
+BUTTON
+========================= */
 
 button{
 position:relative;
@@ -566,7 +565,9 @@ translateY(-6px)
 scale(1.02);
 }
 
-/* SUCCESS */
+/* =========================
+SUCCESS
+========================= */
 
 .success{
 display:none;
@@ -590,7 +591,9 @@ font-weight:800;
 color:#00ffd5;
 }
 
-/* FOOTER */
+/* =========================
+FOOTER
+========================= */
 
 footer{
 padding:30px;
@@ -697,7 +700,7 @@ padding:22px;
 border-radius:30px;
 }
 
-.grid{
+.form-grid{
 grid-template-columns:1fr;
 }
 
@@ -737,14 +740,19 @@ letter-spacing:1.5px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="bg">
+
+<div class="bg-grid"></div>
+
 <div class="blur b1"></div>
 <div class="blur b2"></div>
 <div class="blur b3"></div>
+
 </div>
 
 <main>
@@ -801,7 +809,7 @@ YHX.in is a rare and highly brandable 3-letter premium domain perfect for AI sta
 
 <form id="form" onsubmit="sendMail(event)">
 
-<div class="grid">
+<div class="form-grid">
 
 <div class="field">
 <label>First Name <span>*</span></label>
@@ -825,13 +833,17 @@ YHX.in is a rare and highly brandable 3-letter premium domain perfect for AI sta
 
 <div class="field">
 <label>Offer <span>*</span></label>
+
 <input type="number" id="offer" min="300" required>
+
 <span class="note" id="minNote">
 Minimum offer loading...
 </span>
+
 </div>
 
 <div class="field">
+
 <label>Currency <span>*</span></label>
 
 <select id="currency" required>
@@ -843,14 +855,19 @@ Minimum offer loading...
 </div>
 
 <div class="field full">
+
 <label>Message <span>*</span></label>
+
 <textarea id="message" required></textarea>
+
 </div>
+
+<!-- TURNSTILE -->
 
 <div 
 class="cf-turnstile full"
 id="captchaBox"
-data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
+data-sitekey="0x4AAAAAADOnvYn6E_DaUl2Q"
 style="display:none;">
 </div>
 
@@ -863,9 +880,17 @@ Send Inquiry
 </form>
 
 <div class="success" id="successBox">
+
 <h2>Thank You 🎉</h2>
-<p>Your inquiry has been sent successfully.</p>
-<div class="timer" id="timer">5</div>
+
+<p>
+Your inquiry has been sent successfully.
+</p>
+
+<div class="timer" id="timer">
+5
+</div>
+
 </div>
 
 </div>
@@ -883,26 +908,43 @@ YHX.IN — Premium Digital Asset
 <script>
 
 (function(){
+
 emailjs.init("RA7Yehviqu_UNulcU");
+
 })();
 
-const iti=window.intlTelInput(document.querySelector("#phone"),{
+/* PHONE */
+
+const iti=window.intlTelInput(
+document.querySelector("#phone"),
+{
+
 initialCountry:"auto",
 
 geoIpLookup:function(callback){
+
 fetch("https://ipwho.is/")
 .then(res=>res.json())
 .then(data=>callback(data.country_code))
 .catch(()=>callback("IN"));
+
 },
 
-utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+utilsScript:
+"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+
 });
 
-const inputs=document.querySelectorAll("#form input,#form textarea,#form select");
+/* FORM CHECK */
+
+const inputs=document.querySelectorAll(
+"#form input,#form textarea,#form select"
+);
 
 inputs.forEach(input=>{
+
 input.addEventListener("input",checkForm);
+
 });
 
 function checkForm(){
@@ -918,10 +960,15 @@ if(currency.value) count++;
 if(message.value.trim()) count++;
 
 if(count>=4){
-document.getElementById("captchaBox").style.display="block";
+
+document.getElementById("captchaBox")
+.style.display="block";
+
 }
 
 }
+
+/* OFFER */
 
 let minINR=28000;
 
@@ -929,7 +976,10 @@ async function getRate(){
 
 try{
 
-const res=await fetch("https://api.frankfurter.app/latest?from=USD&to=INR");
+const res=await fetch(
+"https://api.frankfurter.app/latest?from=USD&to=INR"
+);
+
 const data=await res.json();
 
 const usdToInr=data.rates.INR;
@@ -952,6 +1002,8 @@ document.getElementById("minNote").innerText=
 
 getRate();
 
+/* AUTO CURRENCY */
+
 async function setCurrencyByCountry(){
 
 try{
@@ -960,64 +1012,112 @@ const res=await fetch("https://ipwho.is/");
 const data=await res.json();
 
 if(data.country_code==="IN"){
+
 currency.value="INR";
+
 }else{
+
 currency.value="USD";
+
 }
 
 }catch{
+
 currency.value="USD";
-}
 
 }
 
-window.addEventListener("load",setCurrencyByCountry);
+}
+
+window.addEventListener(
+"load",
+setCurrencyByCountry
+);
+
+/* SEND */
 
 function sendMail(e){
 
 e.preventDefault();
 
-const tokenInput=document.querySelector('[name="cf-turnstile-response"]');
+/* CAPTCHA */
+
+const tokenInput=document.querySelector(
+'[name="cf-turnstile-response"]'
+);
 
 if(!tokenInput || !tokenInput.value){
-alert("Verify you are human");
+
+alert("Please verify you are human");
+
 return;
+
 }
 
+/* PHONE */
+
 if(!iti.isValidNumber()){
+
 alert("Enter valid phone number");
+
 return;
+
 }
+
+/* OFFER */
 
 const offerValue=parseFloat(offer.value);
 const currencyValue=currency.value;
 
 if(currencyValue==="USD" && offerValue<300){
+
 alert("Minimum $300");
+
 return;
+
 }
 
 if(currencyValue==="INR" && offerValue<minINR){
+
 alert("Minimum ₹" + minINR);
+
 return;
+
 }
 
+/* PARAMS */
+
 const params={
+
 fname:fname.value,
 lname:lname.value,
+
 email:email.value,
+
 phone:iti.getNumber(),
+
 offer:offer.value,
+
 currency:currency.value,
+
 message:message.value,
+
 domain:"YHX.in"
+
 };
 
-emailjs.send("service_y231ani","template_fin8z5k",params)
+/* SEND EMAIL */
+
+emailjs.send(
+"service_y231ani",
+"template_fin8z5k",
+params
+)
 
 .then(()=>{
 
 form.style.display="none";
+
 successBox.style.display="block";
 
 let t=5;
@@ -1027,15 +1127,22 @@ const i=setInterval(()=>{
 timer.innerText=--t;
 
 if(t<=0){
+
 clearInterval(i);
+
 window.location="/";
+
 }
 
 },1000);
 
 })
 
-.catch(()=>alert("Failed"));
+.catch(()=>{
+
+alert("Failed");
+
+});
 
 }
 
