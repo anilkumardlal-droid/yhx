@@ -1,67 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Redirecting...</title>
+<title>Redirecting — YHX.IN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-font-family: Arial, sans-serif;
-display:flex;
-align-items:flex-start;
-justify-content:center;
-height:100vh;
+
+*{
 margin:0;
-background:#fff;
-color:#111;
-font-size:18px;
-padding-top:120px;
+padding:0;
+box-sizing:border-box;
 }
 
-/* 🔥 TIMER STYLE */
-#count{
-color:#1a73e8;
-font-weight:700;
-font-size:22px;
+html,
+body{
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+body{
+
+font-family:'Syne',sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+radial-gradient(circle at top left,#2563eb15,transparent 35%),
+radial-gradient(circle at bottom right,#38bdf815,transparent 35%),
+linear-gradient(180deg,#050505,#000000);
+
+color:#fff;
+
+position:relative;
+}
+
+/* ========================================= */
+
+.grid{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+background-size:80px 80px;
+
+mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
+}
+
+/* ========================================= */
+
+.glow{
+
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+opacity:.18;
+}
+
+.g1{
+width:420px;
+height:420px;
+background:#2563eb;
+top:-120px;
+left:-100px;
+}
+
+.g2{
+width:340px;
+height:340px;
+background:#38bdf8;
+bottom:-100px;
+right:-80px;
+}
+
+/* ========================================= */
+
+.card{
+
+position:relative;
+z-index:5;
+
+width:min(92%,620px);
+
+padding:54px 42px;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.82),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:34px;
+
+backdrop-filter:blur(30px);
+
+overflow:hidden;
+
+text-align:center;
+
+box-shadow:
+0 20px 80px rgba(0,0,0,.45);
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#38bdf8,
+#2563eb,
+transparent
+);
+}
+
+/* ========================================= */
+
+.label{
+
+display:inline-flex;
+
+padding:12px 20px;
+
+margin-bottom:28px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
+
+font-size:11px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+color:#cbd5e1;
+}
+
+/* ========================================= */
+
+h1{
+
+font-size:clamp(44px,7vw,78px);
+
+line-height:.9;
+
+font-weight:800;
+
+letter-spacing:-3px;
+
+text-transform:uppercase;
+
+margin-bottom:22px;
+}
+
+.gradient{
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#7dd3fc,
+#2563eb
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* ========================================= */
+
+.desc{
+
+font-size:16px;
+
+line-height:1.9;
+
+color:#b8c4d6;
+
+margin-bottom:42px;
+}
+
+/* ========================================= */
+
+.timer{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+/* ========================================= */
+
+.count{
+
+width:96px;
+height:96px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:36px;
+
+font-weight:800;
+
+color:#7dd3fc;
+
+box-shadow:
+0 0 40px rgba(56,189,248,.18);
+
 animation:pulse 1s infinite;
 }
 
-/* 🔥 smooth animation */
-@keyframes pulse{
-0%{opacity:1; transform:scale(1);}
-50%{opacity:0.5; transform:scale(1.1);}
-100%{opacity:1; transform:scale(1);}
-}
-</style>
-</head>
+.text{
 
+font-size:14px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#94a3b8;
+}
+
+/* ========================================= */
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.08);
+opacity:.7;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* ========================================= */
+
+@media(max-width:768px){
+
+body{
+padding:18px;
+}
+
+.card{
+padding:40px 24px;
+border-radius:26px;
+}
+
+.label{
+font-size:10px;
+letter-spacing:3px;
+}
+
+h1{
+font-size:48px;
+letter-spacing:-2px;
+}
+
+.desc{
+font-size:14px;
+line-height:1.8;
+}
+
+.count{
+width:78px;
+height:78px;
+font-size:30px;
+}
+
+.text{
+font-size:12px;
+letter-spacing:2px;
+}
+
+}
+
+@media(max-width:480px){
+
+.card{
+padding:34px 20px;
+}
+
+h1{
+font-size:40px;
+}
+
+.desc{
+font-size:13px;
+}
+
+.count{
+width:68px;
+height:68px;
+font-size:24px;
+}
+
+.label{
+font-size:9px;
+letter-spacing:2px;
+}
+
+}
+
+</style>
+
+</head>
 <body>
 
-<p>Redirecting to YHX.IN — Please wait <span id="count">3</span>...</p>
+<div class="grid"></div>
+
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+
+<div class="card">
+
+<div class="label">
+YHX Redirect System
+</div>
+
+<h1>
+Redirecting<br>
+<span class="gradient">
+Securely
+</span>
+</h1>
+
+<p class="desc">
+You are being redirected to the official YHX.IN destination. Please wait while the secure routing process completes.
+</p>
+
+<div class="timer">
+
+<div class="count" id="count">
+5
+</div>
+
+<div class="text">
+Seconds Remaining
+</div>
+
+</div>
+
+</div>
 
 <script>
-// 🔥 /index fix (instant redirect without breaking design)
-let path = window.location.pathname;
 
-if(path === "/index" || path === "/index.html"){
-  window.location.replace("/");
-}
-
-// normal timer redirect
 let time = 5;
+
 let counter = document.getElementById("count");
 
-let interval = setInterval(function(){
-  time--;
-  counter.textContent = time;
+counter.textContent = time;
 
-  if(time <= 0){
-    clearInterval(interval);
-    window.location.href = "/";
-  }
-}, 1000);
+let interval = setInterval(function(){
+
+time--;
+
+counter.textContent = time;
+
+if(time <= 0){
+
+clearInterval(interval);
+
+window.location.href = "/";
+
+}
+
+},1000);
+
 </script>
 
 </body>
