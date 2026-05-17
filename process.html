@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YHX.IN — Domain Acquisition Process</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Syne',sans-serif;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
+}
+
+.hero{
+position:relative;
+min-height:100vh;
+padding:80px 24px;
+overflow:hidden;
+
+background:
+radial-gradient(circle at top left,#3b82f610,transparent 35%),
+radial-gradient(circle at bottom right,#06b6d410,transparent 35%),
+linear-gradient(180deg,#050505,#000000);
+}
+
+.grid{
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+background-size:80px 80px;
+
+mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
+}
+
+.container{
+position:relative;
+z-index:2;
+max-width:1300px;
+margin:auto;
+}
+
+.label{
+width:max-content;
+padding:14px 24px;
+
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+
+clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
+
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+
+margin-bottom:40px;
+}
+
+h1{
+font-size:clamp(58px,9vw,140px);
+line-height:.85;
+letter-spacing:-5px;
+font-weight:800;
+text-transform:uppercase;
+margin-bottom:30px;
+}
+
+.gradient{
+background:linear-gradient(180deg,#fff,#7dd3fc,#2563eb);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.desc{
+max-width:850px;
+font-size:20px;
+line-height:2;
+color:#cbd5e1;
+margin-bottom:70px;
+}
+
+.stats{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-bottom:60px;
+}
+
+.stat{
+position:relative;
+padding:22px 26px;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.85),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+overflow:hidden;
+
+backdrop-filter:blur(24px);
+}
+
+.stat::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#38bdf8,
+transparent
+);
+}
+
+.stat span{
+display:block;
+font-size:11px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+.stat strong{
+font-size:30px;
+font-weight:800;
+letter-spacing:-1px;
+}
+
+.process{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:28px;
+}
+
+.card{
+position:relative;
+padding:40px;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.82),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+backdrop-filter:blur(30px);
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 60px rgba(37,99,235,.18),
+0 0 40px rgba(56,189,248,.08);
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#38bdf8,
+#2563eb,
+transparent
+);
+}
+
+.number{
+font-size:72px;
+font-weight:800;
+line-height:1;
+
+background:linear-gradient(180deg,#fff,#38bdf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+}
+
+.card h2{
+font-size:34px;
+margin-bottom:18px;
+letter-spacing:-1px;
+}
+
+.card p{
+font-size:16px;
+line-height:2;
+color:#b8c4d6;
+}
+
+.footer{
+margin-top:80px;
+text-align:center;
+}
+
+.footer h3{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.footer p{
+font-size:18px;
+line-height:2;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:20px 36px;
+
+background:
+linear-gradient(135deg,#0ea5e9,#2563eb);
+
+color:#fff;
+text-decoration:none;
+
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+
+clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
+
+box-shadow:
+0 20px 50px rgba(37,99,235,.25);
+
+transition:.35s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+@media(max-width:992px){
+
+.process{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:80px;
+}
+
+.desc{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:60px 18px;
+}
+
+h1{
+font-size:54px;
+letter-spacing:-2px;
+}
+
+.desc{
+font-size:15px;
+line-height:1.8;
+}
+
+.card{
+padding:28px;
+}
+
+.card h2{
+font-size:28px;
+}
+
+.number{
+font-size:54px;
+}
+
+.footer h3{
+font-size:32px;
+}
+
+.footer p{
+font-size:15px;
+}
+
+.btn{
+width:100%;
+padding:18px 20px;
+font-size:13px;
+}
+
+}
+
+@media(max-width:992px){
+
+.hero{
+padding:60px 24px;
+}
+
+.process{
+grid-template-columns:1fr;
+}
+
+.stats{
+gap:14px;
+}
+
+.stat{
+flex:1 1 calc(50% - 14px);
+}
+
+h1{
+font-size:80px;
+line-height:.9;
+}
+
+.desc{
+font-size:18px;
+line-height:1.9;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:50px 18px;
+}
+
+.label{
+font-size:10px;
+letter-spacing:3px;
+padding:12px 18px;
+}
+
+h1{
+font-size:56px;
+line-height:.92;
+letter-spacing:-2px;
+}
+
+.desc{
+font-size:15px;
+line-height:1.8;
+margin-bottom:50px;
+}
+
+.stats{
+flex-direction:column;
+gap:16px;
+}
+
+.stat{
+width:100%;
+}
+
+.card{
+padding:28px;
+border-radius:24px;
+}
+
+.card h2{
+font-size:28px;
+}
+
+.card p{
+font-size:15px;
+line-height:1.9;
+}
+
+.number{
+font-size:54px;
+}
+
+.btn{
+width:100%;
+padding:18px 20px;
+font-size:13px;
+}
+
+.footer{
+margin-top:60px;
+}
+
+.footer h3{
+font-size:30px;
+}
+
+.footer p{
+font-size:15px;
+line-height:1.9;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero{
+padding:40px 14px;
+}
+
+h1{
+font-size:44px;
+letter-spacing:-1px;
+}
+
+.desc{
+font-size:14px;
+}
+
+.card{
+padding:22px;
+}
+
+.card h2{
+font-size:24px;
+}
+
+.number{
+font-size:44px;
+}
+
+.stat{
+padding:18px 20px;
+}
+
+.stat strong{
+font-size:24px;
+}
+
+.footer h3{
+font-size:26px;
+}
+
+}
+
+@media(max-width:360px){
+
+h1{
+font-size:38px;
+}
+
+.card{
+padding:20px;
+}
+
+.number{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="grid"></div>
+
+<div class="container">
+
+<div class="label">
+Secure Domain Acquisition
+</div>
+
+<h1>
+Domain<br>
+<span class="gradient">
+Purchase
+</span><br>
+Process
+</h1>
+
+<p class="desc">
+YHX.IN follows a professional and secure acquisition workflow designed for startups, investors, AI companies, and global technology brands seeking premium digital ownership.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<span>Transfer</span>
+<strong>24-72H</strong>
+</div>
+
+<div class="stat">
+<span>Security</span>
+<strong>Escrow</strong>
+</div>
+
+<div class="stat">
+<span>Ownership</span>
+<strong>100%</strong>
+</div>
+
+</div>
+
+<div class="process">
+
+<div class="card">
+<div class="number">01</div>
+<h2>Inquiry</h2>
+<p>
+Submit your acquisition request through our secure inquiry system with your offer, company details, and intended usage.
+</p>
+</div>
+
+<div class="card">
+<div class="number">02</div>
+<h2>Negotiation</h2>
+<p>
+Our acquisition team reviews your request and discusses pricing, transfer terms, ownership structure, and purchase conditions privately.
+</p>
+</div>
+
+<div class="card">
+<div class="number">03</div>
+<h2>Payment</h2>
+<p>
+Once the agreement is finalized, the buyer proceeds with a secure payment process using verified and protected transaction methods.
+</p>
+</div>
+
+<div class="card">
+<div class="number">04</div>
+<h2>Escrow</h2>
+<p>
+For maximum security and trust, escrow services may be used to safely protect both buyer and seller during the transaction.
+</p>
+</div>
+
+<div class="card">
+<div class="number">05</div>
+<h2>Transfer</h2>
+<p>
+The domain is unlocked and transferred securely using registrar authorization codes and protected transfer procedures.
+</p>
+</div>
+
+<div class="card">
+<div class="number">06</div>
+<h2>Ownership Completion</h2>
+<p>
+After successful transfer confirmation, full domain ownership and management rights are officially assigned to the buyer.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+
+<h3>
+Ready To Acquire YHX.IN?
+</h3>
+
+<p>
+Start your secure premium domain acquisition today and establish your next-generation digital identity.
+</p>
+
+<a href="https://yhx.in/contact" class="btn">
+Start Domain Inquiry
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
