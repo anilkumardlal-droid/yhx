@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>YHX.IN — Domain Acquisition Process</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,18 +17,30 @@ padding:0;
 box-sizing:border-box;
 }
 
+html,
+body{
+width:100%;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Syne',sans-serif;
 background:#050505;
 color:#fff;
-overflow-x:hidden;
 }
 
+/* ================================================= */
+
 .hero{
+
 position:relative;
+
 min-height:100vh;
-padding:80px 24px;
+
 overflow:hidden;
+
+padding:70px 24px 100px;
 
 background:
 radial-gradient(circle at top left,#3b82f610,transparent 35%),
@@ -36,7 +48,10 @@ radial-gradient(circle at bottom right,#06b6d410,transparent 35%),
 linear-gradient(180deg,#050505,#000000);
 }
 
+/* ================================================= */
+
 .grid{
+
 position:absolute;
 inset:0;
 
@@ -49,62 +64,134 @@ background-size:80px 80px;
 mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
 }
 
+/* ================================================= */
+
+.glow{
+
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+opacity:.18;
+}
+
+.g1{
+width:420px;
+height:420px;
+background:#2563eb;
+top:-120px;
+left:-100px;
+}
+
+.g2{
+width:360px;
+height:360px;
+background:#38bdf8;
+bottom:40px;
+right:-100px;
+}
+
+/* ================================================= */
+
 .container{
+
 position:relative;
-z-index:2;
-max-width:1300px;
+z-index:5;
+
+max-width:1320px;
 margin:auto;
 }
 
-.label{
-width:max-content;
-padding:14px 24px;
+/* ================================================= */
 
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
+.label{
+
+width:max-content;
+
+padding:14px 24px;
 
 clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
 
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
 font-size:11px;
+
 letter-spacing:4px;
+
 text-transform:uppercase;
+
+backdrop-filter:blur(20px);
 
 margin-bottom:40px;
 }
 
+/* ================================================= */
+
 h1{
-font-size:clamp(58px,9vw,140px);
-line-height:.85;
-letter-spacing:-5px;
+
+font-size:clamp(70px,9vw,150px);
+
+line-height:.82;
+
 font-weight:800;
+
+letter-spacing:-6px;
+
 text-transform:uppercase;
+
 margin-bottom:30px;
 }
 
 .gradient{
-background:linear-gradient(180deg,#fff,#7dd3fc,#2563eb);
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#7dd3fc,
+#2563eb
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.desc{
-max-width:850px;
-font-size:20px;
-line-height:2;
-color:#cbd5e1;
-margin-bottom:70px;
-}
+/* ================================================= */
 
-.stats{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
+.desc{
+
+max-width:860px;
+
+font-size:20px;
+
+line-height:2;
+
+color:#cfd7e3;
+
 margin-bottom:60px;
 }
 
+/* ================================================= */
+
+.stats{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-bottom:80px;
+}
+
 .stat{
+
 position:relative;
+
 padding:22px 26px;
+
+min-width:180px;
 
 background:
 linear-gradient(
@@ -115,18 +202,24 @@ rgba(255,255,255,.03)
 
 border:1px solid rgba(255,255,255,.08);
 
+backdrop-filter:blur(24px);
+
 border-radius:24px;
 
 overflow:hidden;
 
-backdrop-filter:blur(24px);
+transition:.4s;
 }
 
 .stat::before{
+
 content:"";
+
 position:absolute;
+
 top:0;
 left:0;
+
 width:100%;
 height:2px;
 
@@ -135,33 +228,71 @@ linear-gradient(
 90deg,
 transparent,
 #38bdf8,
+#2563eb,
 transparent
 );
 }
 
+.stat:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 60px rgba(37,99,235,.22),
+0 0 30px rgba(56,189,248,.18);
+}
+
 .stat span{
+
 display:block;
-font-size:11px;
-letter-spacing:3px;
+
+font-size:10px;
+
+letter-spacing:4px;
+
 text-transform:uppercase;
+
 color:#94a3b8;
-margin-bottom:10px;
+
+margin-bottom:14px;
 }
 
 .stat strong{
+
 font-size:30px;
+
+line-height:1;
+
 font-weight:800;
-letter-spacing:-1px;
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#7dd3fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
+/* ================================================= */
+
 .process{
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:28px;
+
+margin-bottom:100px;
 }
 
 .card{
+
 position:relative;
+
 padding:40px;
 
 background:
@@ -183,6 +314,7 @@ transition:.4s;
 }
 
 .card:hover{
+
 transform:translateY(-8px);
 
 box-shadow:
@@ -191,10 +323,14 @@ box-shadow:
 }
 
 .card::before{
+
 content:"";
+
 position:absolute;
+
 top:0;
 left:0;
+
 width:100%;
 height:2px;
 
@@ -209,62 +345,193 @@ transparent
 }
 
 .number{
+
 font-size:72px;
+
 font-weight:800;
+
 line-height:1;
 
-background:linear-gradient(180deg,#fff,#38bdf8);
+margin-bottom:20px;
+
+background:
+linear-gradient(
+180deg,
+#fff,
+#38bdf8
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-
-margin-bottom:20px;
 }
 
 .card h2{
+
 font-size:34px;
+
 margin-bottom:18px;
+
 letter-spacing:-1px;
 }
 
 .card p{
+
 font-size:16px;
+
 line-height:2;
+
 color:#b8c4d6;
 }
 
+/* ================================================= */
+
+.guide{
+
+position:relative;
+
+padding:60px;
+
+margin-bottom:90px;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.82),
+rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:34px;
+
+backdrop-filter:blur(30px);
+
+overflow:hidden;
+}
+
+.guide::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#38bdf8,
+#2563eb,
+transparent
+);
+}
+
+.guide h3{
+
+font-size:48px;
+
+margin-bottom:26px;
+
+letter-spacing:-2px;
+}
+
+.guide p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#cfd7e3;
+
+margin-bottom:26px;
+}
+
+.guide-block{
+
+margin-top:40px;
+}
+
+.guide-block h4{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#ffffff;
+}
+
+.guide ul{
+
+padding-left:24px;
+}
+
+.guide li{
+
+margin-bottom:14px;
+
+font-size:16px;
+
+line-height:1.9;
+
+color:#b8c4d6;
+}
+
+/* ================================================= */
+
 .footer{
-margin-top:80px;
+
 text-align:center;
 }
 
 .footer h3{
-font-size:42px;
+
+font-size:44px;
+
 margin-bottom:20px;
 }
 
 .footer p{
+
 font-size:18px;
+
 line-height:2;
-color:#cbd5e1;
-margin-bottom:30px;
+
+color:#cfd7e3;
+
+margin-bottom:34px;
 }
 
 .btn{
+
 display:inline-flex;
-align-items:center;
+
 justify-content:center;
+align-items:center;
 
 padding:20px 36px;
 
 background:
-linear-gradient(135deg,#0ea5e9,#2563eb);
+linear-gradient(
+135deg,
+#0ea5e9,
+#2563eb
+);
 
 color:#fff;
+
 text-decoration:none;
 
 font-size:14px;
+
 font-weight:700;
+
 letter-spacing:2px;
+
 text-transform:uppercase;
 
 clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
@@ -279,6 +546,8 @@ transition:.35s;
 transform:translateY(-5px);
 }
 
+/* ================================================= */
+
 @media(max-width:992px){
 
 .process{
@@ -286,11 +555,19 @@ grid-template-columns:1fr;
 }
 
 h1{
-font-size:80px;
+font-size:90px;
 }
 
 .desc{
 font-size:18px;
+}
+
+.guide{
+padding:40px;
+}
+
+.guide h3{
+font-size:40px;
 }
 
 }
@@ -298,21 +575,41 @@ font-size:18px;
 @media(max-width:768px){
 
 .hero{
-padding:60px 18px;
+padding:50px 18px 70px;
+}
+
+.label{
+font-size:10px;
+letter-spacing:3px;
+padding:12px 18px;
 }
 
 h1{
-font-size:54px;
-letter-spacing:-2px;
+font-size:58px;
+letter-spacing:-3px;
 }
 
 .desc{
 font-size:15px;
 line-height:1.8;
+margin-bottom:50px;
+}
+
+.stats{
+flex-direction:column;
+}
+
+.stat{
+width:100%;
+}
+
+.process{
+gap:22px;
 }
 
 .card{
 padding:28px;
+border-radius:24px;
 }
 
 .card h2{
@@ -321,6 +618,30 @@ font-size:28px;
 
 .number{
 font-size:54px;
+}
+
+.card p{
+font-size:15px;
+line-height:1.9;
+}
+
+.guide{
+padding:28px;
+border-radius:24px;
+}
+
+.guide h3{
+font-size:30px;
+}
+
+.guide h4{
+font-size:22px;
+}
+
+.guide p,
+.guide li{
+font-size:15px;
+line-height:1.9;
 }
 
 .footer h3{
@@ -339,117 +660,15 @@ font-size:13px;
 
 }
 
-@media(max-width:992px){
-
-.hero{
-padding:60px 24px;
-}
-
-.process{
-grid-template-columns:1fr;
-}
-
-.stats{
-gap:14px;
-}
-
-.stat{
-flex:1 1 calc(50% - 14px);
-}
-
-h1{
-font-size:80px;
-line-height:.9;
-}
-
-.desc{
-font-size:18px;
-line-height:1.9;
-}
-
-}
-
-@media(max-width:768px){
-
-.hero{
-padding:50px 18px;
-}
-
-.label{
-font-size:10px;
-letter-spacing:3px;
-padding:12px 18px;
-}
-
-h1{
-font-size:56px;
-line-height:.92;
-letter-spacing:-2px;
-}
-
-.desc{
-font-size:15px;
-line-height:1.8;
-margin-bottom:50px;
-}
-
-.stats{
-flex-direction:column;
-gap:16px;
-}
-
-.stat{
-width:100%;
-}
-
-.card{
-padding:28px;
-border-radius:24px;
-}
-
-.card h2{
-font-size:28px;
-}
-
-.card p{
-font-size:15px;
-line-height:1.9;
-}
-
-.number{
-font-size:54px;
-}
-
-.btn{
-width:100%;
-padding:18px 20px;
-font-size:13px;
-}
-
-.footer{
-margin-top:60px;
-}
-
-.footer h3{
-font-size:30px;
-}
-
-.footer p{
-font-size:15px;
-line-height:1.9;
-}
-
-}
-
 @media(max-width:480px){
 
 .hero{
-padding:40px 14px;
+padding:40px 14px 60px;
 }
 
 h1{
-font-size:44px;
-letter-spacing:-1px;
+font-size:46px;
+letter-spacing:-2px;
 }
 
 .desc{
@@ -460,12 +679,12 @@ font-size:14px;
 padding:22px;
 }
 
-.card h2{
-font-size:24px;
-}
-
 .number{
 font-size:44px;
+}
+
+.card h2{
+font-size:24px;
 }
 
 .stat{
@@ -476,24 +695,16 @@ padding:18px 20px;
 font-size:24px;
 }
 
-.footer h3{
+.guide{
+padding:22px;
+}
+
+.guide h3{
 font-size:26px;
 }
 
-}
-
-@media(max-width:360px){
-
-h1{
-font-size:38px;
-}
-
-.card{
-padding:20px;
-}
-
-.number{
-font-size:38px;
+.footer h3{
+font-size:26px;
 }
 
 }
@@ -505,6 +716,9 @@ font-size:38px;
 <section class="hero">
 
 <div class="grid"></div>
+
+<div class="glow g1"></div>
+<div class="glow g2"></div>
 
 <div class="container">
 
@@ -528,11 +742,11 @@ YHX.IN follows a professional and secure acquisition workflow designed for start
 
 <div class="stat">
 <span>Transfer</span>
-<strong>24-72H</strong>
+<strong>24–72H</strong>
 </div>
 
 <div class="stat">
-<span>Security</span>
+<span>Protection</span>
 <strong>Escrow</strong>
 </div>
 
@@ -542,6 +756,8 @@ YHX.IN follows a professional and secure acquisition workflow designed for start
 </div>
 
 </div>
+
+<!-- PROCESS -->
 
 <div class="process">
 
@@ -594,6 +810,103 @@ After successful transfer confirmation, full domain ownership and management rig
 </div>
 
 </div>
+
+<!-- DETAILED GUIDE -->
+
+<div class="guide">
+
+<h3>
+Detailed Acquisition Guide
+</h3>
+
+<p>
+Purchasing a premium digital domain is a professional transfer process designed to keep both buyer and seller secure. Below is the complete acquisition workflow for YHX.IN.
+</p>
+
+<div class="guide-block">
+
+<h4>
+Required Information
+</h4>
+
+<ul>
+<li>Your name</li>
+<li>Company or startup name</li>
+<li>Email address</li>
+<li>Phone number</li>
+<li>Purchase offer</li>
+<li>Intended use of the domain</li>
+</ul>
+
+</div>
+
+<div class="guide-block">
+
+<h4>
+Initial Discussion
+</h4>
+
+<ul>
+<li>Domain pricing discussion</li>
+<li>Business verification</li>
+<li>Transfer method selection</li>
+<li>Payment preferences</li>
+<li>Ownership clarification</li>
+</ul>
+
+</div>
+
+<div class="guide-block">
+
+<h4>
+Secure Transaction Methods
+</h4>
+
+<ul>
+<li>Escrow services</li>
+<li>Secure bank transfer</li>
+<li>Verified payment platforms</li>
+<li>Registrar-assisted transfer</li>
+</ul>
+
+</div>
+
+<div class="guide-block">
+
+<h4>
+Domain Transfer Process
+</h4>
+
+<ul>
+<li>Domain unlock process begins</li>
+<li>Authorization code generated</li>
+<li>Registrar transfer initiated</li>
+<li>Ownership moved securely</li>
+<li>Most transfers complete within 24–72 hours</li>
+</ul>
+
+</div>
+
+<div class="guide-block">
+
+<h4>
+Why Buyers Choose YHX.IN
+</h4>
+
+<ul>
+<li>Ultra-short premium brand identity</li>
+<li>AI and futuristic startup positioning</li>
+<li>Professional acquisition process</li>
+<li>Secure ownership transfer</li>
+<li>Global business-ready branding</li>
+<li>Confidential negotiations</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
 
 <div class="footer">
 
