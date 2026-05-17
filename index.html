@@ -866,6 +866,551 @@ text-decoration:none;
 </style>
 </head>
 <body>
+    
+<!-- ULTRA PREMIUM PARTICLE LOADER -->
+
+<div id="loader">
+
+<div class="loader-noise"></div>
+
+<div class="loader-grid"></div>
+
+<div class="loader-glow glow-1"></div>
+<div class="loader-glow glow-2"></div>
+<div class="loader-glow glow-3"></div>
+
+<div class="loader-ring ring-1"></div>
+<div class="loader-ring ring-2"></div>
+
+<div class="loader-center">
+
+<div class="loader-logo">
+YHX
+</div>
+
+<div class="loader-sub">
+NEXT GENERATION DIGITAL IDENTITY
+</div>
+
+<div class="loader-progress">
+
+<div class="loader-progress-bar"></div>
+
+</div>
+
+<div class="loader-percent" id="loaderPercent">
+0%
+</div>
+
+</div>
+
+<div class="particles">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
+<style>
+
+/* ================================================= */
+/* BODY LOADING */
+/* ================================================= */
+
+body.loading{
+overflow:hidden;
+}
+
+/* ================================================= */
+/* ULTRA LOADER */
+/* ================================================= */
+
+#loader{
+
+position:fixed;
+inset:0;
+
+width:100%;
+height:100vh;
+
+background:
+radial-gradient(circle at top left,#2563eb25,transparent 35%),
+radial-gradient(circle at bottom right,#38bdf825,transparent 35%),
+linear-gradient(180deg,#020617,#000);
+
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+backdrop-filter:blur(10px);
+
+transition:
+opacity 1s ease,
+visibility 1s ease;
+}
+
+/* ================================================= */
+
+.loader-grid{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+background-size:70px 70px;
+
+mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
+}
+
+/* ================================================= */
+
+.loader-noise{
+
+position:absolute;
+inset:0;
+
+background-image:
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffffff' fill-opacity='.03'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='60' cy='80' r='1'/%3E%3Ccircle cx='120' cy='30' r='1'/%3E%3Ccircle cx='90' cy='120' r='1'/%3E%3C/g%3E%3C/svg%3E");
+
+opacity:.4;
+}
+
+/* ================================================= */
+
+.loader-glow{
+
+position:absolute;
+border-radius:50%;
+
+filter:blur(120px);
+
+animation:glowFloat 8s ease-in-out infinite;
+}
+
+.glow-1{
+
+width:340px;
+height:340px;
+
+background:#2563eb;
+
+top:-120px;
+left:-100px;
+
+opacity:.28;
+}
+
+.glow-2{
+
+width:280px;
+height:280px;
+
+background:#38bdf8;
+
+bottom:-80px;
+right:-80px;
+
+opacity:.22;
+}
+
+.glow-3{
+
+width:240px;
+height:240px;
+
+background:#0ea5e9;
+
+top:40%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+opacity:.16;
+}
+
+@keyframes glowFloat{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-30px);
+}
+
+}
+
+/* ================================================= */
+
+.loader-ring{
+
+position:absolute;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.06);
+
+animation:rotate 12s linear infinite;
+}
+
+.ring-1{
+
+width:420px;
+height:420px;
+}
+
+.ring-2{
+
+width:520px;
+height:520px;
+
+animation-direction:reverse;
+animation-duration:18s;
+}
+
+@keyframes rotate{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+/* ================================================= */
+
+.loader-center{
+
+position:relative;
+z-index:5;
+
+text-align:center;
+}
+
+/* ================================================= */
+
+.loader-logo{
+
+font-size:clamp(70px,10vw,160px);
+
+font-weight:800;
+
+letter-spacing:-8px;
+
+line-height:1;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#7dd3fc,
+#2563eb
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.03);
+}
+
+}
+
+/* ================================================= */
+
+.loader-sub{
+
+font-size:11px;
+
+letter-spacing:6px;
+
+color:#94a3b8;
+
+margin-bottom:40px;
+}
+
+/* ================================================= */
+
+.loader-progress{
+
+position:relative;
+
+width:280px;
+height:4px;
+
+margin:auto;
+
+background:rgba(255,255,255,.08);
+
+border-radius:999px;
+
+overflow:hidden;
+}
+
+.loader-progress-bar{
+
+position:absolute;
+left:0;
+top:0;
+
+width:0%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#38bdf8,
+#2563eb
+);
+
+box-shadow:
+0 0 20px rgba(56,189,248,.6);
+
+animation:progressLoad 2.2s ease forwards;
+}
+
+@keyframes progressLoad{
+
+0%{
+width:0%;
+}
+
+100%{
+width:100%;
+}
+
+}
+
+/* ================================================= */
+
+.loader-percent{
+
+margin-top:18px;
+
+font-size:14px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#e2e8f0;
+}
+
+/* ================================================= */
+
+.particles{
+
+position:absolute;
+inset:0;
+overflow:hidden;
+}
+
+.particles span{
+
+position:absolute;
+
+display:block;
+
+width:2px;
+height:2px;
+
+background:#7dd3fc;
+
+border-radius:50%;
+
+opacity:.5;
+
+animation:particleMove linear infinite;
+}
+
+.particles span:nth-child(1){
+left:10%;
+top:100%;
+animation-duration:10s;
+}
+
+.particles span:nth-child(2){
+left:20%;
+top:100%;
+animation-duration:14s;
+}
+
+.particles span:nth-child(3){
+left:30%;
+top:100%;
+animation-duration:9s;
+}
+
+.particles span:nth-child(4){
+left:40%;
+top:100%;
+animation-duration:12s;
+}
+
+.particles span:nth-child(5){
+left:50%;
+top:100%;
+animation-duration:15s;
+}
+
+.particles span:nth-child(6){
+left:60%;
+top:100%;
+animation-duration:8s;
+}
+
+.particles span:nth-child(7){
+left:70%;
+top:100%;
+animation-duration:13s;
+}
+
+.particles span:nth-child(8){
+left:80%;
+top:100%;
+animation-duration:11s;
+}
+
+.particles span:nth-child(9){
+left:90%;
+top:100%;
+animation-duration:16s;
+}
+
+.particles span:nth-child(10){
+left:95%;
+top:100%;
+animation-duration:10s;
+}
+
+@keyframes particleMove{
+
+0%{
+transform:translateY(0px);
+opacity:0;
+}
+
+10%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* ================================================= */
+
+.loader-hide{
+
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+/* ================================================= */
+
+@media(max-width:768px){
+
+.loader-logo{
+font-size:72px;
+letter-spacing:-4px;
+}
+
+.loader-progress{
+width:220px;
+}
+
+.loader-sub{
+font-size:9px;
+letter-spacing:4px;
+}
+
+.loader-percent{
+font-size:12px;
+}
+
+.ring-1{
+width:300px;
+height:300px;
+}
+
+.ring-2{
+width:380px;
+height:380px;
+}
+
+}
+
+</style>
+
+<script>
+
+document.body.classList.add("loading");
+
+let percent = 0;
+
+const percentText =
+document.getElementById("loaderPercent");
+
+const interval = setInterval(()=>{
+
+percent++;
+
+percentText.innerText = percent + "%";
+
+if(percent >= 100){
+
+clearInterval(interval);
+
+setTimeout(()=>{
+
+document
+.getElementById("loader")
+.classList.add("loader-hide");
+
+document.body.classList.remove("loading");
+
+},500);
+
+}
+
+},22);
+
+</script>
 
 <section class="hero">
 
