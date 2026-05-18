@@ -1470,39 +1470,7 @@ required
 maxlength="120"
 placeholder="Enter Email">
 
-<button 
-type="button"
-id="sendOtpBtn"
-style="
-height:54px;
-padding:0 20px;
-border:none;
-background:linear-gradient(135deg,#0ea5e9,#2563eb);
-color:#fff;
-font-weight:700;
-cursor:pointer;
-border-radius:14px;
-min-width:110px;
-transition:.3s;
-">
-OTP
-</button>
 
-</div>
-
-<div 
-id="otpBox"
-style="
-display:none;
-margin-top:12px;
-">
-
-<input
-type="text"
-id="otp"
-inputmode="numeric"
-maxlength="6"
-placeholder="Enter OTP">
 
 </div>
 
@@ -1834,36 +1802,6 @@ document
 sendMail
 );
 
-document
-.getElementById("sendOtpBtn")
-.addEventListener(
-"click",
-async ()=>{
-
-if(!validateEmail()) return;
-
-const email =
-document
-.getElementById("email")
-.value;
-
-try{
-
-const res = await fetch(
-"https://yellow-sea-55b9.anilsrivastav561.workers.dev/api/send-otp",
-{
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-email
-})
-
-});
-
 const data =
 await res.json();
 
@@ -1922,55 +1860,6 @@ alert("Please verify you are human");
 return;
 
 }
-
-const otp =
-document
-.getElementById("otp")
-.value;
-
-if(!otp){
-
-alert("Enter OTP");
-
-return;
-
-}
-
-try{
-
-const verify =
-await fetch(
-"https://yellow-sea-55b9.anilsrivastav561.workers.dev/api/verify-otp",
-{
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-
-email:
-document.getElementById("email").value,
-
-otp
-
-})
-
-});
-
-const verifyData =
-await verify.json();
-
-if(!verifyData.success){
-
-alert("Invalid OTP");
-
-return;
-
-}
-
-otpVerified = true;
 
 document
 .getElementById("sendOtpBtn")
