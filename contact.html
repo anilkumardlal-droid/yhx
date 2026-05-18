@@ -1951,7 +1951,7 @@ headers:{
 body:JSON.stringify({
 
 email:
-email.value,
+document.getElementById("email").value,
 
 otp
 
@@ -2019,16 +2019,16 @@ return;
 /* WAIT SCREEN */
 /* ================================================= */
 
-submitBtn.disabled = true;
+document.getElementById("submitBtn").disabled = true;
 
-submitBtn.innerText =
+document.getElementById("submitBtn").innerText =
 "Processing...";
 
-form.style.display="none";
+document.getElementById("form").style.display="none";
 
-successBox.style.display="block";
+document.getElementById("successBox").style.display="block";
 
-successBox.innerHTML=`
+document.getElementById("successBox").innerHTML=`
 
 <h2>
 Please Wait
