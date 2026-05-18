@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
@@ -1406,6 +1406,14 @@ OPEN
 
 <form id="form" onsubmit="sendMail(event)">
 
+<input 
+type="text"
+id="website"
+autocomplete="off"
+style="
+display:none;
+">
+
 <div class="form-grid">
 
 <div class="field">
@@ -1414,7 +1422,14 @@ OPEN
 First Name <span>*</span>
 </label>
 
-<input id="fname" required>
+<input 
+id="fname"
+type="text"
+required
+minlength="2"
+maxlength="30"
+pattern="^[A-Za-z ]+$"
+autocomplete="off">
 
 </div>
 
@@ -1424,7 +1439,14 @@ First Name <span>*</span>
 Last Name <span>*</span>
 </label>
 
-<input id="lname" required>
+<input 
+id="lname"
+type="text"
+required
+minlength="2"
+maxlength="30"
+pattern="^[A-Za-z ]+$"
+autocomplete="off">
 
 </div>
 
@@ -1434,7 +1456,55 @@ Last Name <span>*</span>
 Email Address <span>*</span>
 </label>
 
-<input type="email" id="email" required>
+<div 
+style="
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+">
+
+<input 
+type="email"
+id="email"
+required
+maxlength="120"
+placeholder="Enter Email">
+
+<button 
+type="button"
+id="sendOtpBtn"
+style="
+height:54px;
+padding:0 20px;
+border:none;
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+color:#fff;
+font-weight:700;
+cursor:pointer;
+border-radius:14px;
+min-width:110px;
+transition:.3s;
+">
+OTP
+</button>
+
+</div>
+
+<div 
+id="otpBox"
+style="
+display:none;
+margin-top:12px;
+">
+
+<input
+type="text"
+id="otp"
+inputmode="numeric"
+maxlength="6"
+placeholder="Enter OTP">
+
+</div>
 
 </div>
 
@@ -1496,7 +1566,13 @@ INR
 Message <span>*</span>
 </label>
 
-<textarea id="message" required></textarea>
+<textarea
+id="message"
+required
+minlength="10"
+maxlength="1000"
+autocomplete="off">
+</textarea>
 
 </div>
 
@@ -1543,7 +1619,7 @@ contact@yhx.in
 
 (function(){
 
-emailjs.init("RA7Yehviqu_UNulcU");
+
 
 })();
 
@@ -1575,15 +1651,88 @@ utilsScript:
 
 const phoneError=document.getElementById("phoneError");
 
+let otpVerified = false;
+
+const blockedDomains = [
+
+"mailinator.com",
+"10minutemail.com",
+"guerrillamail.com",
+"tempmail.com",
+"fakeinbox.com"
+
+];
+
+function validateEmail(){
+
+const email =
+document
+.getElementById("email")
+.value
+.trim()
+.toLowerCase();
+
+const regex =
+/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+if(!regex.test(email)){
+
+alert("Invalid Email");
+
+return false;
+
+}
+
+const domain =
+email.split("@")[1];
+
+if(
+blockedDomains.includes(domain)
+){
+
+alert(
+"Disposable emails are blocked"
+);
+
+return false;
+
+}
+
+return true;
+
+}
+
 /* ================================================= */
 
 function validatePhone(){
 
-const value=phoneInput.value.trim();
+const value =
+phoneInput.value.trim();
 
-if(value.length<6){
+const fullNumber =
+iti.getNumber();
 
-phoneError.style.display="block";
+if(value.length < 8){
+
+phoneError.innerText =
+"Invalid phone number";
+
+phoneError.style.display =
+"block";
+
+return false;
+
+}
+
+if(
+/(\d)\1{6,}/.test(fullNumber)
+){
+
+phoneError.innerText =
+"Fake phone number";
+
+phoneError.style.display =
+"block";
 
 return false;
 
@@ -1591,13 +1740,18 @@ return false;
 
 if(!iti.isValidNumber()){
 
-phoneError.style.display="block";
+phoneError.innerText =
+"Invalid phone number";
+
+phoneError.style.display =
+"block";
 
 return false;
 
 }
 
-phoneError.style.display="none";
+phoneError.style.display =
+"none";
 
 return true;
 
@@ -1673,9 +1827,80 @@ window.addEventListener(
 setCurrencyByCountry
 );
 
+document
+.getElementById("sendOtpBtn")
+.addEventListener(
+"click",
+async ()=>{
+
+if(!validateEmail()) return;
+
+const email =
+document
+.getElementById("email")
+.value;
+
+try{
+
+const res = await fetch(
+"https://yellow-sea-55b9.anilsrivastav561.workers.dev/api/send-otp",
+{
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+email
+})
+
+});
+
+const data =
+await res.json();
+
+if(data.success){
+
+document
+.getElementById("otpBox")
+.style.display = "block";
+
+alert(
+"OTP sent successfully"
+);
+
+}else{
+
+alert(data.message);
+
+}
+
+}catch{
+
+alert("OTP failed");
+
+}
+
+});
+
 /* ================================================= */
 
-function sendMail(e){
+async function sendMail(e){
+if(
+document
+.getElementById("website")
+.value
+){
+
+return;
+}
+
+if(!validateEmail()){
+
+return;
+
+}
 
 e.preventDefault();
 
@@ -1686,6 +1911,71 @@ const tokenInput=document.querySelector(
 if(!tokenInput || !tokenInput.value){
 
 alert("Please verify you are human");
+
+return;
+
+}
+
+const otp =
+document
+.getElementById("otp")
+.value;
+
+if(!otp){
+
+alert("Enter OTP");
+
+return;
+
+}
+
+try{
+
+const verify =
+await fetch(
+"https://yellow-sea-55b9.anilsrivastav561.workers.dev/api/verify-otp",
+{
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+email:
+email.value,
+
+otp
+
+})
+
+});
+
+const verifyData =
+await verify.json();
+
+if(!verifyData.success){
+
+alert("Invalid OTP");
+
+return;
+
+}
+
+otpVerified = true;
+
+document
+.getElementById("sendOtpBtn")
+.disabled = true;
+
+document
+.getElementById("sendOtpBtn")
+.innerText = "Verified";
+
+}catch{
+
+alert("OTP verification failed");
 
 return;
 
@@ -1721,6 +2011,11 @@ return;
 /* ================================================= */
 /* WAIT SCREEN */
 /* ================================================= */
+
+submitBtn.disabled = true;
+
+submitBtn.innerText =
+"Processing...";
 
 form.style.display="none";
 
@@ -1771,21 +2066,32 @@ currency:currency.value,
 
 message:message.value,
 
-domain:"YHX.in"
+domain:"YHX.in",
+
+turnstileToken:
+tokenInput.value,
 
 };
 
-emailjs.send(
-"service_y231ani",
-"template_fin8z5k",
-params
-)
+try{
 
-.then(()=>{
+const send = await fetch(
+"https://yellow-sea-55b9.anilsrivastav561.workers.dev/api/contact",
+{
+method:"POST",
 
-/* ================================================= */
-/* SUCCESS */
-/* ================================================= */
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(params)
+
+});
+
+const result =
+await send.json();
+
+if(result.success){
 
 successBox.innerHTML=`
 
@@ -1806,13 +2112,18 @@ Our acquisition team has received your inquiry successfully.
 
 let redirect = 5;
 
-const redirectInterval=setInterval(()=>{
+const redirectInterval =
+setInterval(()=>{
 
-document.getElementById("timer2").innerText=--redirect;
+document
+.getElementById("timer2")
+.innerText = --redirect;
 
-if(redirect<=0){
+if(redirect <= 0){
 
-clearInterval(redirectInterval);
+clearInterval(
+redirectInterval
+);
 
 window.location.href="/";
 
@@ -1820,9 +2131,7 @@ window.location.href="/";
 
 },1000);
 
-})
-
-.catch(()=>{
+}else{
 
 successBox.innerHTML=`
 
@@ -1831,13 +2140,28 @@ Failed To Send
 </h2>
 
 <p>
-Something went wrong.<br>
-Please refresh and try again.
+${result.message}
 </p>
 
 `;
 
-});
+}
+
+}catch{
+
+successBox.innerHTML=`
+
+<h2>
+Server Error
+</h2>
+
+<p>
+Please try again later.
+</p>
+
+`;
+
+}
 
 }
 
