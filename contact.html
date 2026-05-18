@@ -1478,7 +1478,12 @@ Invalid phone number
 Offer <span>*</span>
 </label>
 
-<input type="number" id="offer" min="300" required>
+<input
+type="number"
+id="offer"
+min="300"
+max="999999999"
+required>
 
 <span class="note" id="minNote">
 Minimum offer loading...
@@ -1712,6 +1717,34 @@ setCurrencyByCountry
 /* ================================================= */
 
 function sendMail(e){
+
+const blockedDomains = [
+"mailinator.com",
+"10minutemail.com",
+"guerrillamail.com",
+"tempmail.com",
+"fakeinbox.com"
+];
+
+const emailValue =
+email.value
+.trim()
+.toLowerCase();
+
+const emailDomain =
+emailValue.split("@")[1];
+
+if(
+blockedDomains.includes(emailDomain)
+){
+
+alert(
+"Disposable emails are blocked"
+);
+
+return;
+
+}
     
 if(
 document.getElementById("website").value
@@ -1733,6 +1766,20 @@ return;
 
 }
 
+if(
+message.value.trim().length < 10
+){
+
+alert(
+"Message too short"
+);
+
+message.focus();
+
+return;
+
+}
+    
 if(!validatePhone()){
 
 phoneInput.focus();
@@ -1763,6 +1810,9 @@ return;
 /* ================================================= */
 /* WAIT SCREEN */
 /* ================================================= */
+
+submitBtn.disabled = true;
+submitBtn.innerText = "Processing...";
 
 form.style.display="none";
 
