@@ -1420,7 +1420,14 @@ style="display:none">
 First Name <span>*</span>
 </label>
 
-<input id="fname" required>
+<input
+id="fname"
+type="text"
+required
+minlength="2"
+maxlength="30"
+pattern="^[A-Za-z ]+$"
+autocomplete="off">
 
 </div>
 
@@ -1430,7 +1437,14 @@ First Name <span>*</span>
 Last Name <span>*</span>
 </label>
 
-<input id="lname" required>
+<input
+id="lname"
+type="text"
+required
+minlength="2"
+maxlength="30"
+pattern="^[A-Za-z ]+$"
+autocomplete="off">
 
 </div>
 
