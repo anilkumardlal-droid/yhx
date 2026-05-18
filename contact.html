@@ -1405,6 +1405,12 @@ OPEN
 <!-- FORM -->
 
 <form id="form" onsubmit="sendMail(event)">
+    
+<input
+type="text"
+id="website"
+autocomplete="off"
+style="display:none">
 
 <div class="form-grid">
 
@@ -1589,6 +1595,22 @@ return false;
 
 }
 
+if(
+/(\d)\1{6,}/.test(
+iti.getNumber()
+)
+){
+
+phoneError.innerText =
+"Fake phone number";
+
+phoneError.style.display =
+"block";
+
+return false;
+
+}
+
 if(!iti.isValidNumber()){
 
 phoneError.style.display="block";
@@ -1676,6 +1698,12 @@ setCurrencyByCountry
 /* ================================================= */
 
 function sendMail(e){
+    
+if(
+document.getElementById("website").value
+){
+return;
+}
 
 e.preventDefault();
 
