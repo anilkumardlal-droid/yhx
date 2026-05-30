@@ -655,15 +655,170 @@ transform:scale(1.05);
 }
 
 }
+
+/* PRELOADER */
+
+.preloader{
+
+background:#eaf4fb;
+
+height:100%;
+
+left:0;
+
+position:fixed;
+
+right:0;
+
+top:0;
+
+width:100%;
+
+z-index:9999999;
+
+}
+
+.status{
+
+position:absolute;
+
+width:50px;
+height:50px;
+
+border-radius:15px;
+
+animation:rotation 1s infinite;
+
+z-index:9;
+
+top:50%;
+left:50%;
+
+margin:-25px 0 0 -25px;
+
+}
+
+.status .shape{
+
+position:absolute;
+
+width:20px;
+height:20px;
+
+border-radius:10px;
+
+}
+
+.status .shape.shape-1{
+left:0;
+background-color:#10a6ba;
+}
+
+.status .shape.shape-2{
+right:0;
+background-color:#3850d5;
+}
+
+.status .shape.shape-3{
+bottom:0;
+background-color:#10a6ba;
+}
+
+.status .shape.shape-4{
+bottom:0;
+right:0;
+background-color:#3850d5;
+}
+
+.status .shape-1{
+animation:shape1 .5s infinite alternate;
+}
+
+.status .shape-2{
+animation:shape2 .5s infinite alternate;
+}
+
+.status .shape-3{
+animation:shape3 .5s infinite alternate;
+}
+
+.status .shape-4{
+animation:shape4 .5s infinite alternate;
+}
+
+@keyframes rotation{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes shape1{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(40px,40px);
+}
+
+}
+
+@keyframes shape2{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-40px,40px);
+}
+
+}
+
+@keyframes shape3{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(40px,-40px);
+}
+
+}
+
+@keyframes shape4{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-40px,-40px);
+}
+
+}
 </style>
 
 </head>
 
 <body>
     
-<!-- ULTRA PREMIUM PARTICLE LOADER -->
-
-
+<div class="preloader">
+    <div class="status">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+</div>
 
 <main>
 
@@ -1217,6 +1372,16 @@ Please refresh and try again.
 },1000);
 
 }
+
+</script>
+
+<script>
+
+window.addEventListener("load",function(){
+
+document.querySelector(".preloader").style.display="none";
+
+});
 
 </script>
 
