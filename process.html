@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>YHX.IN — Domain Acquisition Process</title>
+<title>YHX.IN — Premium Domain Acquisition Process</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -25,12 +28,172 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Syne',sans-serif;
-background:#050505;
-color:#fff;
+
+font-family:"Nunito",sans-serif;
+
+background:#eaf4fb;
+
+color:#1e3547;
+
 }
 
-/* ================================================= */
+/* ====================================== */
+/* LOADER */
+/* ====================================== */
+
+body.loading{
+overflow:hidden;
+}
+
+#loader{
+
+position:fixed;
+inset:0;
+
+width:100%;
+height:100vh;
+
+background:#eaf4fb;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+transition:
+opacity .8s ease,
+visibility .8s ease;
+
+}
+
+.preloader{
+
+position:relative;
+
+width:50px;
+height:50px;
+
+border-radius:15px;
+
+animation:rotation 1s infinite;
+
+}
+
+.preloader .shape{
+
+position:absolute;
+
+width:20px;
+height:20px;
+
+border-radius:10px;
+
+}
+
+.preloader .shape-1{
+left:0;
+background:#10a6ba;
+}
+
+.preloader .shape-2{
+right:0;
+background:#3850d5;
+}
+
+.preloader .shape-3{
+bottom:0;
+background:#10a6ba;
+}
+
+.preloader .shape-4{
+bottom:0;
+right:0;
+background:#3850d5;
+}
+
+.preloader .shape-1{
+animation:shape1 .5s infinite alternate;
+}
+
+.preloader .shape-2{
+animation:shape2 .5s infinite alternate;
+}
+
+.preloader .shape-3{
+animation:shape3 .5s infinite alternate;
+}
+
+.preloader .shape-4{
+animation:shape4 .5s infinite alternate;
+}
+
+@keyframes rotation{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes shape1{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(40px,40px);
+}
+
+}
+
+@keyframes shape2{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-40px,40px);
+}
+
+}
+
+@keyframes shape3{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(40px,-40px);
+}
+
+}
+
+@keyframes shape4{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-40px,-40px);
+}
+
+}
+
+.loader-hide{
+opacity:0;
+visibility:hidden;
+}
+
+/* ====================================== */
 
 .hero{
 
@@ -38,141 +201,138 @@ position:relative;
 
 min-height:100vh;
 
-overflow:hidden;
-
-padding:70px 24px 100px;
+padding:90px 24px 100px;
 
 background:
-radial-gradient(circle at top left,#3b82f610,transparent 35%),
-radial-gradient(circle at bottom right,#06b6d410,transparent 35%),
-linear-gradient(180deg,#050505,#000000);
+linear-gradient(
+rgba(234,244,251,.82),
+rgba(234,244,251,.82)
+),
+url('images/overlay-1.png');
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
 }
 
-/* ================================================= */
-
-.grid{
-
-position:absolute;
-inset:0;
-
-background:
-linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-
-background-size:80px 80px;
-
-mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
-}
-
-/* ================================================= */
-
-.glow{
-
-position:absolute;
-border-radius:50%;
-filter:blur(120px);
-opacity:.18;
-}
-
-.g1{
-width:420px;
-height:420px;
-background:#2563eb;
-top:-120px;
-left:-100px;
-}
-
-.g2{
-width:360px;
-height:360px;
-background:#38bdf8;
-bottom:40px;
-right:-100px;
-}
-
-/* ================================================= */
+/* ====================================== */
 
 .container{
 
-position:relative;
-z-index:5;
-
 max-width:1320px;
+
 margin:auto;
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 .label{
 
 width:max-content;
 
-padding:14px 24px;
+padding:12px 20px;
 
-clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
+background:#ffffff;
 
-background:rgba(255,255,255,.05);
+border:1px solid #dbe7f2;
 
-border:1px solid rgba(255,255,255,.08);
+border-radius:14px;
 
 font-size:11px;
 
-letter-spacing:4px;
+font-weight:700;
+
+letter-spacing:2px;
 
 text-transform:uppercase;
 
-backdrop-filter:blur(20px);
+color:#3850d5;
 
-margin-bottom:40px;
+margin-bottom:30px;
+
+box-shadow:
+0px 0px 40px rgba(0,0,0,.03);
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 h1{
 
-font-size:clamp(70px,9vw,150px);
+font-size:clamp(56px,8vw,120px);
 
-line-height:.82;
+line-height:.95;
 
 font-weight:800;
 
-letter-spacing:-6px;
+letter-spacing:-4px;
 
-text-transform:uppercase;
+margin-bottom:26px;
 
-margin-bottom:30px;
+min-height:120px;
+
 }
 
-.gradient{
+#typeText{
+
+display:inline-block;
 
 background:
 linear-gradient(
-180deg,
-#ffffff,
-#7dd3fc,
-#2563eb
+90deg,
+#3850d5,
+#10a6ba,
+#7c3aed,
+#3850d5
 );
 
+background-size:300% 300%;
+
 -webkit-background-clip:text;
+
 -webkit-text-fill-color:transparent;
+
+animation:gradientMove 6s ease infinite;
+
 }
 
-/* ================================================= */
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ====================================== */
 
 .desc{
 
-max-width:860px;
+max-width:920px;
 
-font-size:20px;
+font-size:18px;
 
 line-height:2;
 
-color:#cfd7e3;
+color:#6b7b88;
 
-margin-bottom:60px;
+margin-bottom:55px;
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 .stats{
 
@@ -182,101 +342,62 @@ gap:18px;
 
 flex-wrap:wrap;
 
-margin-bottom:80px;
+margin-bottom:70px;
+
 }
 
 .stat{
 
-position:relative;
+padding:22px 24px;
 
-padding:22px 26px;
+background:#ffffff;
 
-min-width:180px;
+border:1px solid #e4edf5;
 
-background:
-linear-gradient(
-145deg,
-rgba(15,23,42,.85),
-rgba(255,255,255,.03)
-);
+border-radius:20px;
 
-border:1px solid rgba(255,255,255,.08);
+box-shadow:
+0px 0px 40px rgba(0,0,0,.03);
 
-backdrop-filter:blur(24px);
+transition:.3s;
 
-border-radius:24px;
+min-width:220px;
 
-overflow:hidden;
-
-transition:.4s;
-}
-
-.stat::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:2px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#38bdf8,
-#2563eb,
-transparent
-);
 }
 
 .stat:hover{
 
-transform:translateY(-8px);
+transform:translateY(-4px);
 
-box-shadow:
-0 20px 60px rgba(37,99,235,.22),
-0 0 30px rgba(56,189,248,.18);
 }
 
 .stat span{
 
 display:block;
 
-font-size:10px;
+font-size:11px;
 
-letter-spacing:4px;
+letter-spacing:2px;
 
 text-transform:uppercase;
 
-color:#94a3b8;
+color:#7b8794;
 
-margin-bottom:14px;
+margin-bottom:12px;
+
 }
 
 .stat strong{
 
-font-size:30px;
-
-line-height:1;
+font-size:28px;
 
 font-weight:800;
 
-background:
-linear-gradient(
-180deg,
-#ffffff,
-#7dd3fc
-);
+color:#3850d5;
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
-/* ================================================= */
+/* ====================================== */
 
 .process{
 
@@ -286,158 +407,92 @@ grid-template-columns:repeat(2,1fr);
 
 gap:28px;
 
-margin-bottom:100px;
+margin-bottom:90px;
+
 }
 
 .card{
 
-position:relative;
+padding:38px;
 
-padding:40px;
+background:#ffffff;
 
-background:
-linear-gradient(
-145deg,
-rgba(15,23,42,.82),
-rgba(255,255,255,.03)
-);
+border:1px solid #e4edf5;
 
-border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
 
-border-radius:30px;
+box-shadow:
+0px 0px 50px rgba(0,0,0,.04);
 
-backdrop-filter:blur(30px);
+transition:.3s;
 
-overflow:hidden;
-
-transition:.4s;
 }
 
 .card:hover{
 
-transform:translateY(-8px);
+transform:translateY(-6px);
 
-box-shadow:
-0 20px 60px rgba(37,99,235,.18),
-0 0 40px rgba(56,189,248,.08);
-}
-
-.card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:2px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#38bdf8,
-#2563eb,
-transparent
-);
 }
 
 .number{
 
-font-size:72px;
+font-size:58px;
 
 font-weight:800;
 
-line-height:1;
+margin-bottom:18px;
 
-margin-bottom:20px;
+color:#3850d5;
 
-background:
-linear-gradient(
-180deg,
-#fff,
-#38bdf8
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 .card h2{
 
-font-size:34px;
+font-size:30px;
 
 margin-bottom:18px;
 
-letter-spacing:-1px;
+color:#1e3547;
+
 }
 
 .card p{
 
 font-size:16px;
 
-line-height:2;
+line-height:1.9;
 
-color:#b8c4d6;
+color:#6b7b88;
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 .guide{
 
-position:relative;
+padding:55px;
 
-padding:60px;
+margin-bottom:80px;
 
-margin-bottom:90px;
+background:#ffffff;
 
-background:
-linear-gradient(
-145deg,
-rgba(15,23,42,.82),
-rgba(255,255,255,.02)
-);
+border:1px solid #e4edf5;
 
-border:1px solid rgba(255,255,255,.08);
+border-radius:28px;
 
-border-radius:34px;
+box-shadow:
+0px 0px 50px rgba(0,0,0,.04);
 
-backdrop-filter:blur(30px);
-
-overflow:hidden;
-}
-
-.guide::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:2px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#38bdf8,
-#2563eb,
-transparent
-);
 }
 
 .guide h3{
 
-font-size:48px;
+font-size:44px;
 
-margin-bottom:26px;
+margin-bottom:24px;
 
-letter-spacing:-2px;
+color:#1e3547;
+
 }
 
 .guide p{
@@ -446,28 +501,32 @@ font-size:17px;
 
 line-height:2;
 
-color:#cfd7e3;
+color:#6b7b88;
 
-margin-bottom:26px;
+margin-bottom:22px;
+
 }
 
 .guide-block{
 
 margin-top:40px;
+
 }
 
 .guide-block h4{
 
-font-size:28px;
+font-size:26px;
 
 margin-bottom:18px;
 
-color:#ffffff;
+color:#1e3547;
+
 }
 
 .guide ul{
 
-padding-left:24px;
+padding-left:20px;
+
 }
 
 .guide li{
@@ -478,21 +537,26 @@ font-size:16px;
 
 line-height:1.9;
 
-color:#b8c4d6;
+color:#6b7b88;
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 .footer{
 
 text-align:center;
+
 }
 
 .footer h3{
 
 font-size:44px;
 
-margin-bottom:20px;
+margin-bottom:18px;
+
+color:#1e3547;
+
 }
 
 .footer p{
@@ -501,9 +565,15 @@ font-size:18px;
 
 line-height:2;
 
-color:#cfd7e3;
+color:#6b7b88;
 
 margin-bottom:34px;
+
+max-width:760px;
+
+margin-left:auto;
+margin-right:auto;
+
 }
 
 .btn{
@@ -513,14 +583,9 @@ display:inline-flex;
 justify-content:center;
 align-items:center;
 
-padding:20px 36px;
+padding:14px 30px;
 
-background:
-linear-gradient(
-135deg,
-#0ea5e9,
-#2563eb
-);
+background:#3850d5;
 
 color:#fff;
 
@@ -530,23 +595,28 @@ font-size:14px;
 
 font-weight:700;
 
-letter-spacing:2px;
+letter-spacing:1px;
 
 text-transform:uppercase;
 
-clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
+border-radius:14px;
 
 box-shadow:
-0 20px 50px rgba(37,99,235,.25);
+0 15px 35px rgba(56,80,213,.18);
 
-transition:.35s;
+transition:.3s;
+
 }
 
 .btn:hover{
-transform:translateY(-5px);
+
+transform:translateY(-2px);
+
+background:#2f46c7;
+
 }
 
-/* ================================================= */
+/* ====================================== */
 
 @media(max-width:992px){
 
@@ -554,45 +624,23 @@ transform:translateY(-5px);
 grid-template-columns:1fr;
 }
 
-h1{
-font-size:90px;
-}
-
-.desc{
-font-size:18px;
-}
-
-.guide{
-padding:40px;
-}
-
-.guide h3{
-font-size:40px;
-}
-
 }
 
 @media(max-width:768px){
 
 .hero{
-padding:50px 18px 70px;
-}
-
-.label{
-font-size:10px;
-letter-spacing:3px;
-padding:12px 18px;
+padding:70px 18px;
 }
 
 h1{
-font-size:58px;
-letter-spacing:-3px;
+font-size:60px;
+letter-spacing:-2px;
+min-height:70px;
 }
 
 .desc{
 font-size:15px;
-line-height:1.8;
-margin-bottom:50px;
+line-height:1.9;
 }
 
 .stats{
@@ -603,45 +651,12 @@ flex-direction:column;
 width:100%;
 }
 
-.process{
-gap:22px;
-}
-
 .card{
 padding:28px;
-border-radius:24px;
-}
-
-.card h2{
-font-size:28px;
-}
-
-.number{
-font-size:54px;
-}
-
-.card p{
-font-size:15px;
-line-height:1.9;
 }
 
 .guide{
 padding:28px;
-border-radius:24px;
-}
-
-.guide h3{
-font-size:30px;
-}
-
-.guide h4{
-font-size:22px;
-}
-
-.guide p,
-.guide li{
-font-size:15px;
-line-height:1.9;
 }
 
 .footer h3{
@@ -654,8 +669,6 @@ font-size:15px;
 
 .btn{
 width:100%;
-padding:18px 20px;
-font-size:13px;
 }
 
 }
@@ -663,724 +676,195 @@ font-size:13px;
 @media(max-width:480px){
 
 .hero{
-padding:40px 14px 60px;
+padding:50px 14px;
 }
 
 h1{
-font-size:46px;
-letter-spacing:-2px;
-}
-
-.desc{
-font-size:14px;
+font-size:44px;
 }
 
 .card{
 padding:22px;
 }
 
-.number{
-font-size:44px;
-}
-
-.card h2{
-font-size:24px;
-}
-
-.stat{
-padding:18px 20px;
-}
-
-.stat strong{
-font-size:24px;
-}
-
 .guide{
 padding:22px;
 }
 
-.guide h3{
-font-size:26px;
-}
-
-.footer h3{
-font-size:26px;
-}
-
 }
 
 </style>
-</head>
-<body>
 
-<!-- ULTRA PREMIUM PARTICLE LOADER -->
+</head>
+
+<body>
 
 <div id="loader">
 
-<div class="loader-noise"></div>
+<div class="preloader">
 
-<div class="loader-grid"></div>
-
-<div class="loader-glow glow-1"></div>
-<div class="loader-glow glow-2"></div>
-<div class="loader-glow glow-3"></div>
-
-<div class="loader-ring ring-1"></div>
-<div class="loader-ring ring-2"></div>
-
-<div class="loader-center">
-
-<div class="loader-logo">
-YHX
-</div>
-
-<div class="loader-sub">
-NEXT GENERATION DIGITAL IDENTITY
-</div>
-
-<div class="loader-progress">
-
-<div class="loader-progress-bar"></div>
-
-</div>
-
-<div class="loader-percent" id="loaderPercent">
-0%
-</div>
-
-</div>
-
-<div class="particles">
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-3"></div>
+<div class="shape shape-4"></div>
 
 </div>
 
 </div>
-
-<style>
-
-/* ================================================= */
-/* BODY LOADING */
-/* ================================================= */
-
-body.loading{
-overflow:hidden;
-}
-
-/* ================================================= */
-/* ULTRA LOADER */
-/* ================================================= */
-
-#loader{
-
-position:fixed;
-inset:0;
-
-width:100%;
-height:100vh;
-
-background:
-radial-gradient(circle at top left,#2563eb25,transparent 35%),
-radial-gradient(circle at bottom right,#38bdf825,transparent 35%),
-linear-gradient(180deg,#020617,#000);
-
-overflow:hidden;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-z-index:999999;
-
-backdrop-filter:blur(10px);
-
-transition:
-opacity 1s ease,
-visibility 1s ease;
-}
-
-/* ================================================= */
-
-.loader-grid{
-
-position:absolute;
-inset:0;
-
-background:
-linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-
-background-size:70px 70px;
-
-mask-image:radial-gradient(circle at center,black 40%,transparent 90%);
-}
-
-/* ================================================= */
-
-.loader-noise{
-
-position:absolute;
-inset:0;
-
-background-image:
-url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffffff' fill-opacity='.03'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='60' cy='80' r='1'/%3E%3Ccircle cx='120' cy='30' r='1'/%3E%3Ccircle cx='90' cy='120' r='1'/%3E%3C/g%3E%3C/svg%3E");
-
-opacity:.4;
-}
-
-/* ================================================= */
-
-.loader-glow{
-
-position:absolute;
-border-radius:50%;
-
-filter:blur(120px);
-
-animation:glowFloat 8s ease-in-out infinite;
-}
-
-.glow-1{
-
-width:340px;
-height:340px;
-
-background:#2563eb;
-
-top:-120px;
-left:-100px;
-
-opacity:.28;
-}
-
-.glow-2{
-
-width:280px;
-height:280px;
-
-background:#38bdf8;
-
-bottom:-80px;
-right:-80px;
-
-opacity:.22;
-}
-
-.glow-3{
-
-width:240px;
-height:240px;
-
-background:#0ea5e9;
-
-top:40%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-opacity:.16;
-}
-
-@keyframes glowFloat{
-
-0%,100%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-30px);
-}
-
-}
-
-/* ================================================= */
-
-.loader-ring{
-
-position:absolute;
-
-border-radius:50%;
-
-border:1px solid rgba(255,255,255,.06);
-
-animation:rotate 12s linear infinite;
-}
-
-.ring-1{
-
-width:420px;
-height:420px;
-}
-
-.ring-2{
-
-width:520px;
-height:520px;
-
-animation-direction:reverse;
-animation-duration:18s;
-}
-
-@keyframes rotate{
-
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
-}
-
-}
-
-/* ================================================= */
-
-.loader-center{
-
-position:relative;
-z-index:5;
-
-text-align:center;
-}
-
-/* ================================================= */
-
-.loader-logo{
-
-font-size:clamp(70px,10vw,160px);
-
-font-weight:800;
-
-letter-spacing:-8px;
-
-line-height:1;
-
-margin-bottom:20px;
-
-background:
-linear-gradient(
-180deg,
-#ffffff,
-#7dd3fc,
-#2563eb
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:logoPulse 2s ease-in-out infinite;
-}
-
-@keyframes logoPulse{
-
-0%,100%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.03);
-}
-
-}
-
-/* ================================================= */
-
-.loader-sub{
-
-font-size:11px;
-
-letter-spacing:6px;
-
-color:#94a3b8;
-
-margin-bottom:40px;
-}
-
-/* ================================================= */
-
-.loader-progress{
-
-position:relative;
-
-width:280px;
-height:4px;
-
-margin:auto;
-
-background:rgba(255,255,255,.08);
-
-border-radius:999px;
-
-overflow:hidden;
-}
-
-.loader-progress-bar{
-
-position:absolute;
-left:0;
-top:0;
-
-width:0%;
-height:100%;
-
-background:
-linear-gradient(
-90deg,
-#38bdf8,
-#2563eb
-);
-
-box-shadow:
-0 0 20px rgba(56,189,248,.6);
-
-animation:progressLoad 2.2s ease forwards;
-}
-
-@keyframes progressLoad{
-
-0%{
-width:0%;
-}
-
-100%{
-width:100%;
-}
-
-}
-
-/* ================================================= */
-
-.loader-percent{
-
-margin-top:18px;
-
-font-size:14px;
-
-font-weight:700;
-
-letter-spacing:2px;
-
-color:#e2e8f0;
-}
-
-/* ================================================= */
-
-.particles{
-
-position:absolute;
-inset:0;
-overflow:hidden;
-}
-
-.particles span{
-
-position:absolute;
-
-display:block;
-
-width:2px;
-height:2px;
-
-background:#7dd3fc;
-
-border-radius:50%;
-
-opacity:.5;
-
-animation:particleMove linear infinite;
-}
-
-.particles span:nth-child(1){
-left:10%;
-top:100%;
-animation-duration:10s;
-}
-
-.particles span:nth-child(2){
-left:20%;
-top:100%;
-animation-duration:14s;
-}
-
-.particles span:nth-child(3){
-left:30%;
-top:100%;
-animation-duration:9s;
-}
-
-.particles span:nth-child(4){
-left:40%;
-top:100%;
-animation-duration:12s;
-}
-
-.particles span:nth-child(5){
-left:50%;
-top:100%;
-animation-duration:15s;
-}
-
-.particles span:nth-child(6){
-left:60%;
-top:100%;
-animation-duration:8s;
-}
-
-.particles span:nth-child(7){
-left:70%;
-top:100%;
-animation-duration:13s;
-}
-
-.particles span:nth-child(8){
-left:80%;
-top:100%;
-animation-duration:11s;
-}
-
-.particles span:nth-child(9){
-left:90%;
-top:100%;
-animation-duration:16s;
-}
-
-.particles span:nth-child(10){
-left:95%;
-top:100%;
-animation-duration:10s;
-}
-
-@keyframes particleMove{
-
-0%{
-transform:translateY(0px);
-opacity:0;
-}
-
-10%{
-opacity:.7;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-
-}
-
-/* ================================================= */
-
-.loader-hide{
-
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-}
-
-/* ================================================= */
-
-@media(max-width:768px){
-
-.loader-logo{
-font-size:72px;
-letter-spacing:-4px;
-}
-
-.loader-progress{
-width:220px;
-}
-
-.loader-sub{
-font-size:9px;
-letter-spacing:4px;
-}
-
-.loader-percent{
-font-size:12px;
-}
-
-.ring-1{
-width:300px;
-height:300px;
-}
-
-.ring-2{
-width:380px;
-height:380px;
-}
-
-}
-
-</style>
-
-<script>
-
-document.body.classList.add("loading");
-
-let percent = 0;
-
-const percentText =
-document.getElementById("loaderPercent");
-
-const interval = setInterval(()=>{
-
-percent++;
-
-percentText.innerText = percent + "%";
-
-if(percent >= 100){
-
-clearInterval(interval);
-
-setTimeout(()=>{
-
-document
-.getElementById("loader")
-.classList.add("loader-hide");
-
-document.body.classList.remove("loading");
-
-},500);
-
-}
-
-},22);
-
-</script>
 
 <section class="hero">
-
-<div class="grid"></div>
-
-<div class="glow g1"></div>
-<div class="glow g2"></div>
 
 <div class="container">
 
 <div class="label">
-Secure Domain Acquisition
+Official YHX.IN Acquisition Guide
 </div>
 
 <h1>
-Domain<br>
-<span class="gradient">
-Purchase
-</span><br>
-Process
+<span id="typeText"></span>
 </h1>
 
 <p class="desc">
-YHX.IN follows a professional and secure acquisition workflow designed for startups, investors, AI companies, and global technology brands seeking premium digital ownership.
+YHX.IN is a premium short digital brand created for AI startups, modern SaaS companies, next-generation technology platforms, futuristic digital products, and global online businesses. This acquisition page explains the complete professional purchase workflow, secure ownership transfer process, payment protection methods, and buyer verification system used for premium domain transactions.
 </p>
 
 <div class="stats">
 
 <div class="stat">
-<span>Transfer</span>
+<span>Average Transfer Time</span>
 <strong>24–72H</strong>
 </div>
 
 <div class="stat">
-<span>Protection</span>
+<span>Security Protection</span>
 <strong>Escrow</strong>
 </div>
 
 <div class="stat">
-<span>Ownership</span>
+<span>Ownership Rights</span>
 <strong>100%</strong>
 </div>
 
 </div>
 
-<!-- PROCESS -->
-
 <div class="process">
 
 <div class="card">
+
 <div class="number">01</div>
-<h2>Inquiry</h2>
+
+<h2>
+Submit Inquiry
+</h2>
+
 <p>
-Submit your acquisition request through our secure inquiry system with your offer, company details, and intended usage.
+The buyer begins the acquisition process by submitting a secure inquiry containing business details, intended domain usage, company information, and an official purchase offer.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="number">02</div>
-<h2>Negotiation</h2>
+
+<h2>
+Private Negotiation
+</h2>
+
 <p>
-Our acquisition team reviews your request and discusses pricing, transfer terms, ownership structure, and purchase conditions privately.
+The acquisition team reviews the request and privately discusses pricing structure, ownership transfer conditions, payment methods, and domain transaction terms.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="number">03</div>
-<h2>Payment</h2>
+
+<h2>
+Payment Verification
+</h2>
+
 <p>
-Once the agreement is finalized, the buyer proceeds with a secure payment process using verified and protected transaction methods.
+Once the agreement is finalized, the buyer proceeds with a secure payment process using verified and protected transaction systems for maximum safety.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="number">04</div>
-<h2>Escrow</h2>
+
+<h2>
+Escrow Protection
+</h2>
+
 <p>
-For maximum security and trust, escrow services may be used to safely protect both buyer and seller during the transaction.
+Escrow services may be used during the transaction to protect both buyer and seller while securely handling the premium domain acquisition process.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="number">05</div>
-<h2>Transfer</h2>
+
+<h2>
+Secure Domain Transfer
+</h2>
+
 <p>
-The domain is unlocked and transferred securely using registrar authorization codes and protected transfer procedures.
+The domain is unlocked and transferred securely through registrar authorization codes, protected account verification, and official transfer procedures.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="number">06</div>
-<h2>Ownership Completion</h2>
+
+<h2>
+Ownership Completion
+</h2>
+
 <p>
-After successful transfer confirmation, full domain ownership and management rights are officially assigned to the buyer.
+After successful verification and transfer confirmation, complete domain ownership rights and management access are officially assigned to the buyer.
 </p>
-</div>
 
 </div>
 
-<!-- DETAILED GUIDE -->
+</div>
 
 <div class="guide">
 
 <h3>
-Detailed Acquisition Guide
+Complete Premium Domain Acquisition Guide
 </h3>
 
 <p>
-Purchasing a premium digital domain is a professional transfer process designed to keep both buyer and seller secure. Below is the complete acquisition workflow for YHX.IN.
+Purchasing a premium digital identity such as YHX.IN is a professional ownership transfer process designed for startups, investors, technology companies, and modern online brands seeking a strong and memorable internet presence.
 </p>
 
 <div class="guide-block">
 
 <h4>
-Required Information
+Information Required From Buyers
 </h4>
 
 <ul>
-<li>Your name</li>
-<li>Company or startup name</li>
-<li>Email address</li>
-<li>Phone number</li>
-<li>Purchase offer</li>
-<li>Intended use of the domain</li>
+
+<li>Full legal name or company representative name</li>
+
+<li>Startup, business, or organization name</li>
+
+<li>Professional email address</li>
+
+<li>Active phone number for verification</li>
+
+<li>Official domain purchase offer</li>
+
+<li>Purpose and intended use of the domain</li>
+
 </ul>
 
 </div>
@@ -1388,15 +872,21 @@ Required Information
 <div class="guide-block">
 
 <h4>
-Initial Discussion
+Professional Negotiation Process
 </h4>
 
 <ul>
-<li>Domain pricing discussion</li>
-<li>Business verification</li>
-<li>Transfer method selection</li>
-<li>Payment preferences</li>
-<li>Ownership clarification</li>
+
+<li>Private and confidential discussions</li>
+
+<li>Transparent pricing communication</li>
+
+<li>Business verification if required</li>
+
+<li>Ownership transfer clarification</li>
+
+<li>Secure payment agreement confirmation</li>
+
 </ul>
 
 </div>
@@ -1404,14 +894,21 @@ Initial Discussion
 <div class="guide-block">
 
 <h4>
-Secure Transaction Methods
+Secure Payment & Protection Methods
 </h4>
 
 <ul>
-<li>Escrow services</li>
-<li>Secure bank transfer</li>
-<li>Verified payment platforms</li>
-<li>Registrar-assisted transfer</li>
+
+<li>Escrow transaction protection available</li>
+
+<li>Verified registrar transfer systems</li>
+
+<li>Protected payment processing methods</li>
+
+<li>Buyer and seller identity verification</li>
+
+<li>Safe transaction handling procedures</li>
+
 </ul>
 
 </div>
@@ -1419,39 +916,28 @@ Secure Transaction Methods
 <div class="guide-block">
 
 <h4>
-Domain Transfer Process
+Why Businesses Choose YHX.IN
 </h4>
 
 <ul>
-<li>Domain unlock process begins</li>
-<li>Authorization code generated</li>
-<li>Registrar transfer initiated</li>
-<li>Ownership moved securely</li>
-<li>Most transfers complete within 24–72 hours</li>
-</ul>
 
-</div>
-
-<div class="guide-block">
-
-<h4>
-Why Buyers Choose YHX.IN
-</h4>
-
-<ul>
 <li>Ultra-short premium brand identity</li>
-<li>AI and futuristic startup positioning</li>
-<li>Professional acquisition process</li>
-<li>Secure ownership transfer</li>
-<li>Global business-ready branding</li>
-<li>Confidential negotiations</li>
+
+<li>Perfect for AI and SaaS startups</li>
+
+<li>Strong futuristic technology branding</li>
+
+<li>Global business-ready naming structure</li>
+
+<li>Professional and memorable digital presence</li>
+
+<li>Premium investment-grade domain value</li>
+
 </ul>
 
 </div>
 
 </div>
-
-<!-- FOOTER -->
 
 <div class="footer">
 
@@ -1460,10 +946,10 @@ Ready To Acquire YHX.IN?
 </h3>
 
 <p>
-Start your secure premium domain acquisition today and establish your next-generation digital identity.
+Start your secure premium domain acquisition today and establish a powerful next-generation digital identity for your future business, startup, platform, or technology brand.
 </p>
 
-<a href="https://yhx.in/contact" class="btn">
+<a href="contact.html" class="btn">
 Start Domain Inquiry
 </a>
 
@@ -1472,6 +958,101 @@ Start Domain Inquiry
 </div>
 
 </section>
+
+<script>
+
+document.body.classList.add("loading");
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document
+.getElementById("loader")
+.classList.add("loader-hide");
+
+document.body.classList.remove("loading");
+
+},700);
+
+});
+
+/* ====================================== */
+/* TYPE EFFECT */
+/* ====================================== */
+
+const words = [
+"Domain",
+"Purchase",
+"Process",
+"YERO"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+
+const speed = 120;
+const eraseSpeed = 60;
+const delay = 1200;
+
+const typeTarget =
+document.getElementById("typeText");
+
+function typeEffect(){
+
+if(charIndex < words[wordIndex].length){
+
+typeTarget.innerHTML +=
+words[wordIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeEffect,speed);
+
+}else{
+
+setTimeout(eraseEffect,delay);
+
+}
+
+}
+
+function eraseEffect(){
+
+if(charIndex > 0){
+
+typeTarget.innerHTML =
+words[wordIndex].substring(0,charIndex-1);
+
+charIndex--;
+
+setTimeout(eraseEffect,eraseSpeed);
+
+}else{
+
+wordIndex++;
+
+if(wordIndex >= words.length){
+
+wordIndex = 0;
+
+}
+
+setTimeout(typeEffect,300);
+
+}
+
+}
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+typeEffect();
+
+});
+
+</script>
 
 </body>
 </html>
