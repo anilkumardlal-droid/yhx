@@ -322,8 +322,8 @@ canvas {
 .help-text {
     color: var(--1, #00C2FF);
     text-align: center;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 38px;
+    line-height: 54px;
     font-weight: 400;
     position: fixed;
     bottom: 180px;
