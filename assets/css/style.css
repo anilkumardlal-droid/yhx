@@ -1141,3 +1141,14 @@ label {
 .dot.active {
     background: var(--text-color);
 }
+
+
+section[data-key="age"],
+section[data-key="resume, cv"],
+section[data-key="education , whats your education"],
+section[data-key="experience"],
+section[data-key="awards, award"],
+section[data-key="programming knowledge, programming, knowledge, coding skills, coding"],
+section[data-key="communication, multilingual, languages,language, languages skills, language skills"] {
+    display: none !important;
+}
