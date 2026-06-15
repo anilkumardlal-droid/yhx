@@ -12,11 +12,11 @@ if ($typed.length && typeof Typed !== "undefined") {
 
         new Typed(".ityped", {
             strings: [
-                "Web Designer",
-                "Full Stack Developer",
-                "UI/UX Designer",
-                "Product Designer",
-                "Freelancer"
+                "Domain Investor",
+"Premium Domains",
+"Digital Assets",
+"Brandable Names",
+"AI Domains"
             ],
             typeSpeed: 50,
             backSpeed: 30,
