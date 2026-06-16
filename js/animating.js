@@ -70,10 +70,11 @@ var PageTransitions = (function ($, options) {
         };
 
         var menu = options.menu,
-        pageStart = getActiveSection();
+pageStart = getActiveSection();
 
-        location.hash = pageStart;
-        var menuLink = $(menu+' a[href*="'+location.hash.split('/')[0]+'"]');
+// location.hash = pageStart;  <-- remove/comment this line
+
+var menuLink = $(menu+' a[href="#'+pageStart+'"]');
 
         activeMenuItem(menuLink);
 
