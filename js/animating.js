@@ -101,14 +101,12 @@ var menuLink = $(menu+' a[href="#'+pageStart+'"]');
     }
 
     function getActiveSection() {
-        if(location.hash === "") {
-            return location.hash = $('section.animated-section').first().attr('data-id');
-        } 
-        else {
-            return location.hash;
-        }
+    if(location.hash === "") {
+        return $('section.animated-section').first().attr('data-id');
+    } else {
+        return location.hash.replace('#', '');
     }
-
+}
     function activeMenuItem(item) {
         if ( !item ) {
             return false;
