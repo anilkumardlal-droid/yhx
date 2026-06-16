@@ -63,7 +63,9 @@ var PageTransitions = (function ($, options) {
                 }
                 var menuLink = $(menu+' a[href*="'+location.hash.split('/')[0]+'"]');
                 activeMenuItem( menuLink );
-                Animate(menuLink);
+                if(location.hash){
+    Animate(menuLink);
+}
 
                 ajaxLoader();
             }
