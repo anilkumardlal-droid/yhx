@@ -1,1 +1,10 @@
+.section_header1{
+    opacity:1 !important;
+    filter:none !important;
+    transform:none !important;
+}
 
+.gradient.noise,
+.image-2._2{
+    opacity:1 !important;
+}
